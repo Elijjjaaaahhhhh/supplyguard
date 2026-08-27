@@ -1,0 +1,7 @@
+Metadata-Version: 2.4
+Name: supplyguard
+Version: 0.1.0
+Summary: Predictive supply-chain control tower for inventory and procurement decision support.
+Requires-Python: <3.15,>=3.14
+Requires-Dist: pandas
+Requires-Dist: pyarrow
