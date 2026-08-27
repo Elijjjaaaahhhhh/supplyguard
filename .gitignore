@@ -1,3 +1,7 @@
 # Local data files
 data/external/*
 data/raw/*
+
+# Python package build metadata
+*.egg-info/
+

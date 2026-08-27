@@ -1,7 +1,0 @@
-README.md
-pyproject.toml
-src/supplyguard.egg-info/PKG-INFO
-src/supplyguard.egg-info/SOURCES.txt
-src/supplyguard.egg-info/dependency_links.txt
-src/supplyguard.egg-info/requires.txt
-src/supplyguard.egg-info/top_level.txt
