@@ -5,3 +5,30 @@ data/raw/*
 # Python package build metadata
 *.egg-info/
 
+# Python virtual environment
+.venv/
+
+# Python generated files
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Environment variables / secrets
+.env
+
+# VS Code local settings
+.vscode/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Local data files
+data/external/*
+!data/external/.gitkeep
+
+data/raw/*
+!data/raw/.gitkeep
+
+# Operating system files
+.DS_Store
+Thumbs.db
