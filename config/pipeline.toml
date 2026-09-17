@@ -1,0 +1,18 @@
+# Paths are relative to the project root. Override with --config.
+budget = 300000.0
+sample_size = 1000
+random_seed = 42
+model_threads = 4
+# As-of date defaults to the latest core date; override with --as-of YYYY-MM-DD.
+# Next-day commercial inputs are carried forward; holiday is an explicit assumption.
+future_holiday_flag = 0
+commercial_policy = "carry_forward"
+artifact_dir = "outputs/production"
+
+[weights]
+coverage = 0.30
+stockout = 0.20
+demand = 0.15
+unmet = 0.15
+supplier = 0.10
+priority = 0.10

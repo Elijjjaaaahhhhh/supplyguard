@@ -17,6 +17,7 @@ WITH demand_profile AS (
     FROM core.fact_daily_demand
 
     WHERE source_file = 'train.parquet'
+      AND dt <= current_setting('supplyguard.as_of_date')::date
 
     GROUP BY
         store_id,
@@ -25,38 +26,12 @@ WITH demand_profile AS (
 
 
 latest_prediction AS (
-    /*
-    During the decision-engine prototype we use the most recent
-    model prediction from the final evaluation output represented
-    by the model feature layer.
-
-    Because the CSV predictions are not yet stored in PostgreSQL,
-    expected demand is approximated using the most recent
-    historical rolling demand level.
-
-    We will replace this with persisted model forecasts later.
-    */
-
-    SELECT DISTINCT ON (
-        store_id,
-        product_id
-    )
-        store_id,
-        product_id,
-        sales_rolling_mean_7
-            AS expected_daily_demand
-
-    FROM feature.v_demand_model_v3
-
-    WHERE dt <= DATE '2024-07-02'
-
-    ORDER BY
-        store_id,
-        product_id,
-        dt DESC
+    SELECT store_id,product_id,prediction AS expected_daily_demand
+    FROM ops.forecast
+    WHERE run_id = current_setting('supplyguard.run_id')::uuid
+      AND as_of_date = current_setting('supplyguard.as_of_date')::date
+      AND target_date = current_setting('supplyguard.as_of_date')::date + 1
 ),
-
-
 joined_inputs AS (
     SELECT
         i.store_id,

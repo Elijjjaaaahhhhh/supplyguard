@@ -16,4 +16,15 @@ dependencies = [
     "sqlalchemy",
     "matplotlib",
     "scikit-learn",
+    "joblib",
+    "threadpoolctl",
 ]
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+supplyguard-pipeline = "supplyguard.pipeline:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["integration: PostgreSQL tests; require SUPPLYGUARD_DB_TESTS=1"]

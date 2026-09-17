@@ -71,11 +71,14 @@ INSERT INTO core.dim_store (
     city_id,
     management_group_id
 )
-SELECT DISTINCT
+-- -1 is an explicit mixed-group sentinel, not a source management-group ID.
+SELECT
     store_id,
-    city_id,
-    management_group_id
-FROM staging.retail_daily;
+    MIN(city_id) AS city_id,
+    CASE WHEN COUNT(DISTINCT management_group_id)=1
+         THEN MIN(management_group_id) ELSE -1 END AS management_group_id
+FROM staging.retail_daily
+GROUP BY store_id;
 
 
 INSERT INTO core.dim_date (

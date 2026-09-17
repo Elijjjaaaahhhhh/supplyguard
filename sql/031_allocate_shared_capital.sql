@@ -1,7 +1,7 @@
 -- Allocates a simulated shared replenishment budget in
 -- descending urgency order.
 
--- Prototype budget: 50,000 currency units.
+-- Prototype budget: 300,000 currency units.
 
 
 CREATE TABLE IF NOT EXISTS mart.capital_allocation (
@@ -78,18 +78,18 @@ allocated AS (
     SELECT
         *,
 
-        50000.0 AS total_budget,
+        300000.0 AS total_budget,
 
         CASE
-            WHEN cumulative_requested_value <= 50000.0
+            WHEN cumulative_requested_value <= 300000.0
                 THEN requested_value
 
             WHEN cumulative_requested_value - requested_value
-                >= 50000.0
+                >= 300000.0
                 THEN 0
 
             ELSE
-                50000.0
+                300000.0
                 - (
                     cumulative_requested_value
                     - requested_value

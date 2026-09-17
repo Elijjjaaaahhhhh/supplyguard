@@ -143,17 +143,17 @@ scored AS (
         *,
 
         (
-            0.30 * coverage_gap_score
+            COALESCE(NULLIF(current_setting('supplyguard.weight_coverage', true), ''), '0.30')::DOUBLE PRECISION * coverage_gap_score
             +
-            0.20 * stockout_cost_score
+            COALESCE(NULLIF(current_setting('supplyguard.weight_stockout', true), ''), '0.20')::DOUBLE PRECISION * stockout_cost_score
             +
-            0.15 * demand_score
+            COALESCE(NULLIF(current_setting('supplyguard.weight_demand', true), ''), '0.15')::DOUBLE PRECISION * demand_score
             +
-            0.15 * unmet_requirement_score
+            COALESCE(NULLIF(current_setting('supplyguard.weight_unmet', true), ''), '0.15')::DOUBLE PRECISION * unmet_requirement_score
             +
-            0.10 * supplier_risk_score
+            COALESCE(NULLIF(current_setting('supplyguard.weight_supplier', true), ''), '0.10')::DOUBLE PRECISION * supplier_risk_score
             +
-            0.10 * business_priority_score
+            COALESCE(NULLIF(current_setting('supplyguard.weight_priority', true), ''), '0.10')::DOUBLE PRECISION * business_priority_score
         ) * 100
         AS urgency_score
 

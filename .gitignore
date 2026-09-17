@@ -39,3 +39,6 @@ Thumbs.db
 
 outputs/figures/*
 !outputs/figures/.gitkeep
+# Operational artifacts and run logs
+outputs/production/
+outputs/final_v3c_predictions.csv

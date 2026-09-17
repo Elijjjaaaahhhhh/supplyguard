@@ -166,6 +166,11 @@ classified AS (
         *,
 
         CASE
+            -- Feasibility must be resolved before funding can enable an order.
+            WHEN reorder_required = TRUE
+            AND final_recommended_quantity <= 0
+                THEN 'CONSTRAINED - ESCALATE'
+
             -- Highest priority:
             -- urgent + funded
             WHEN reorder_required = TRUE
@@ -188,12 +193,6 @@ classified AS (
                 )
             AND allocated_quantity = 0
                 THEN 'CRITICAL - FUNDING ESCALATION'
-
-
-            -- Reorder needed but blocked by constraints
-            WHEN reorder_required = TRUE
-            AND final_recommended_quantity <= 0
-                THEN 'CONSTRAINED - ESCALATE'
 
 
             -- Reorder needed but procurement-valid quantity
@@ -244,6 +243,12 @@ actioned AS (
                 = 'CRITICAL - FUNDING ESCALATION'
                 THEN
                     'Escalate working-capital request'
+
+            WHEN control_tower_status
+                = 'CONSTRAINED - ESCALATE'
+                AND urgency_band IN ('CRITICAL', 'HIGH')
+                THEN
+                    'Urgent: resolve procurement/physical constraints; reassess funding'
 
             WHEN control_tower_status
                 = 'CONSTRAINED - ESCALATE'

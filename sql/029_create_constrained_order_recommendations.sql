@@ -198,6 +198,10 @@ final_math AS (
         CASE
             WHEN reorder_required = FALSE
                 THEN 0
+            WHEN LEAST(unconstrained_pack_quantity, affordable_quantity,
+                       capacity_feasible_quantity, shelf_life_max_quantity)
+                 < minimum_order_quantity
+                THEN 0
 
             ELSE
                 GREATEST(

@@ -12,7 +12,7 @@
 -- Each order receives as many complete case packs as the
 -- remaining shared budget can support, subject to MOQ.
 
--- Scenario shared budget = 50,000 currency units.
+-- Scenario shared budget = 300,000 currency units.
 
 
 CREATE TABLE IF NOT EXISTS mart.procurement_capital_allocation (
@@ -118,7 +118,7 @@ eligible_orders AS (
 -- STEP 2
 -- Recursive greedy allocation.
 
--- Start with 50,000.
+-- Start with 300,000.
 --
 -- For each order:
 -- - calculate how many whole packs remaining budget can buy
@@ -148,7 +148,7 @@ allocation AS (
         e.requested_quantity,
         e.requested_order_value,
 
-        50000.0::DOUBLE PRECISION
+        COALESCE(NULLIF(current_setting('supplyguard.budget', true), ''), '300000')::DOUBLE PRECISION::DOUBLE PRECISION
             AS budget_before_order,
 
 
@@ -158,7 +158,7 @@ allocation AS (
                     e.requested_quantity,
 
                     FLOOR(
-                        50000.0
+                        COALESCE(NULLIF(current_setting('supplyguard.budget', true), ''), '300000')::DOUBLE PRECISION
                         /
                         (
                             e.case_pack_size
@@ -174,7 +174,7 @@ allocation AS (
                     e.requested_quantity,
 
                     FLOOR(
-                        50000.0
+                        COALESCE(NULLIF(current_setting('supplyguard.budget', true), ''), '300000')::DOUBLE PRECISION
                         /
                         (
                             e.case_pack_size

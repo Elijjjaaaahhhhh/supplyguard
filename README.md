@@ -2,7 +2,7 @@
 
 SupplyGuard is a portfolio-scale supply-chain control tower that turns retail demand and stock-availability data into transparent inventory and procurement decisions. It combines a PostgreSQL analytical warehouse, leakage-safe demand forecasting, synthetic operating scenarios, constraint-aware replenishment logic, and a decision-ready control-tower mart.
 
-> **Status:** Phase 7 complete. The analytical and decision back end is implemented; Phase 8 will add the BI/control-tower presentation layer and production hardening.
+> **Status:** Phase 9 local batch pipeline implemented and validated; Phase 8 report preserved. The approved report is `app/SupplyGuard.pbix`. See [the Phase 9 operations guide](docs/phase9_operations.md) for commands, persistence, recovery, assumptions and checks.
 
 ## The problem
 
@@ -153,7 +153,7 @@ Orders are prioritised with a transparent 0-100 urgency score:
 - supplier risk: 10%; and
 - business priority: 10%.
 
-The final allocator processes eligible orders in descending urgency, uses whole case packs, enforces MOQ, permits partial funding only when procurement-valid, and tracks spend against a prototype shared budget of 50,000 currency units. `sql/031_...` preserves an earlier all-or-nothing prototype; `sql/032_...` is the procurement-valid allocation used by the control tower.
+The final allocator processes eligible orders in descending urgency, uses whole case packs, enforces MOQ, permits partial funding only when procurement-valid, and tracks spend against a configurable shared budget of 300,000 currency units by default. `sql/031_...` preserves an earlier value-based allocation prototype; `sql/032_...` is the procurement-valid allocation used by the control tower.
 
 ### Control-tower mart
 
@@ -169,6 +169,8 @@ The final allocator processes eligible orders in descending urgency, uses whole 
 The current scenario build produces 1,000 control-tower rows ready for a BI semantic model.
 
 ## Reproduce the project
+
+For the current all-in-one workflow, use `python -m supplyguard.pipeline` and the [operations guide](docs/phase9_operations.md). The commands below retain the original development sequence; current decision rebuilds require the pipeline.
 
 ### Prerequisites
 
@@ -233,6 +235,9 @@ The EDA queries are `sql/012_...` through `sql/017_...`. Generated figures and p
 
 ```text
 supplyguard/
+|-- app/                          # approved Power BI snapshot
+|-- config/                       # operational policy settings
+|-- scripts/                      # scheduler-friendly wrapper
 |-- data/                         # local source data (not versioned)
 |-- docs/
 |   `-- data_dictionary.md       # source semantics and quality findings
@@ -241,7 +246,9 @@ supplyguard/
 |   |-- 001-011                  # warehouse objects, loads, rebuild
 |   |-- 012-017                  # exploratory analysis
 |   |-- 018-025                  # feature tables/views and temporal splits
-|   `-- 026-033                  # scenarios, decisions, constraints, allocation, mart
+|   |-- 026-033                  # scenarios, decisions, constraints, allocation, mart
+|   |-- 034-035                  # Power BI views and classification correction
+|   `-- 036-037                  # run/model/forecast metadata and store/group bridge
 |-- src/supplyguard/
 |   |-- analysis/                # Python EDA and figures
 |   |-- ingestion/               # Parquet-to-PostgreSQL ingestion
@@ -260,20 +267,28 @@ supplyguard/
 - The history is short: 90 training days plus a seven-day holdout. Annual seasonality and long-term drift cannot be estimated.
 - Sales are censored during stockouts; the model forecasts observed sales rather than unconstrained demand.
 - Supplier, inventory, cost, capacity, shelf-life, and funding inputs are synthetic and cover only 1,000 sampled series.
-- **The decision engine does not yet consume persisted V3C predictions.** Until forecast persistence is implemented, `mart.inventory_decision` uses the latest leakage-safe seven-day rolling mean as its expected-demand proxy.
-- Model training is batch-oriented; there is no registry, scheduled retraining, drift monitoring, probabilistic forecast, or calibrated service-level backtest.
-- The 50,000-unit shared budget and urgency weights are prototype policy parameters, not optimised or externally validated rules.
-- Tests currently cover only a small part of ingestion and validation behaviour.
-- There is no dashboard, API, authentication, deployment workflow, or production orchestration yet.
+- The operational decision engine now consumes persisted next-day V3C forecasts with run/model lineage. It treats that next-day level as constant over lead time and the planning horizon; it is not a multi-horizon forecast. Future commercial inputs are explicitly carried forward and holidays are configured.
+- Model training is batch-oriented with local versioned artifacts. There is no installed schedule, drift monitoring, probabilistic forecast, or calibrated service-level backtest.
+- The 300,000-unit default shared budget and configurable urgency weights are prototype policy parameters, not optimised or externally validated rules.
+- Tests include forward-feature cutoffs, configuration, procurement validity and transactional publication. Business service-level calibration remains untested.
+- The Power BI dashboard and local batch orchestration are implemented. There is no hosted API, application authentication, cloud deployment or automatic Power BI service refresh.
 
-## Phase 8: next steps
+## Phase 9: operational pipeline
 
-1. Persist versioned V3C forecasts in PostgreSQL and wire them into the decision engine with run/date lineage.
-2. Build the Power BI control tower over `mart.control_tower`, including KPI cards, status/constraint views, priority queues, drill-through, and funding scenarios.
-3. Move policy parameters such as shared budget and score weights out of SQL literals into governed configuration tables.
-4. Add end-to-end tests, SQL data-quality assertions, orchestration, logging/monitoring, and reproducible model artifacts.
-5. Add backtesting and sensitivity analysis for service levels, constraint rules, capital allocation, and forecast uncertainty.
-6. Replace synthetic operational inputs with governed source systems when available; retain clear lineage wherever simulation remains necessary.
+```powershell
+.\.venv\Scripts\python.exe -m supplyguard.pipeline --dry-run
+.\.venv\Scripts\python.exe -m supplyguard.pipeline
+```
+
+The command validates/reuses source files, rebuilds warehouse features, fits or reuses a versioned V3C model, persists next-day forecasts and publishes checked inventory decisions atomically. Existing synthetic scenario inputs are reused by default. Use `config/pipeline.toml` for the budget and policy settings.
+
+Operational artifacts and logs live under `outputs/production/`. Run, stage, model and forecast records live in PostgreSQL's `ops` schema. The approved PBIX remains an unchanged imported snapshot until manually refreshed.
+
+The SQL commands above document the original development sequence. **Use the pipeline for current decision rebuilds:** script 028 now requires a persisted forecast run and cutoff supplied by the pipeline. See [Phase 9 operations](docs/phase9_operations.md) for setup, test commands, recovery, scheduling and limitations.
+
+## Phase 10: next
+
+Portfolio packaging, a reproducible demonstration, repository documentation, deployment choices and interview readiness.
 
 ## Technical note
 

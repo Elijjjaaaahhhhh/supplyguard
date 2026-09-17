@@ -419,3 +419,7 @@ A synthetic upstream operational layer will later add:
 - supplier reliability behaviour.
 
 Synthetic data will always be explicitly labelled as synthetic and generated from documented business rules rather than presented as real company data.
+
+## Phase 9 store/management-group grain correction
+
+Source inspection shows multiple management groups for a single store on the same date. This field must not be treated as a unique store attribute. `core.bridge_store_management_group` preserves the observed store/group associations. For compatibility, `core.dim_store.management_group_id` contains the unique group when there is one and `-1` when there are several. `mart.bi_dim_store` exposes the same `management_group_id` value; no descriptive group-label column is currently created. The sentinel is not an actual source group. Source values remain intact in raw/staging. Multiple cities for a store fail the warehouse gate pending an explicit location-history design.
