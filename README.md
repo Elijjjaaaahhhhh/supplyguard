@@ -2,7 +2,7 @@
 
 SupplyGuard is a portfolio-scale supply-chain control tower that turns retail demand and stock-availability data into transparent inventory and procurement decisions. It combines a PostgreSQL analytical warehouse, leakage-safe demand forecasting, synthetic operating scenarios, constraint-aware replenishment logic, and a decision-ready control-tower mart.
 
-> **Status:** Phase 9 local batch pipeline implemented and validated; Phase 8 report preserved. The approved report is `app/SupplyGuard.pbix`. See [the Phase 9 operations guide](docs/phase9_operations.md) for commands, persistence, recovery, assumptions and checks.
+> **Status:** Phase 10 complete: local batch pipeline, dated forecast-to-action report, reconciliation and portfolio documentation validated; approved Phase 8 pages preserved. The approved report is `app/SupplyGuard.pbix`. See [the Phase 9 operations guide](docs/phase9_operations.md) for commands, persistence, recovery, assumptions and checks.
 
 ## The problem
 
@@ -27,7 +27,7 @@ FreshRetailNet-50K Parquet files
   raw -> staging -> core -> feature
                                |
                                v
-                 forecasting experiments
+           V3C next-day forecast -> ops.forecast
                                |
                                v
           synthetic scenario inputs
@@ -43,7 +43,7 @@ FreshRetailNet-50K Parquet files
                    mart.control_tower
                                |
                                v
-                  Phase 8 dashboard
+           Power BI forecast-to-action control tower
 ```
 
 The main stack is Python 3.14, pandas, PyArrow, scikit-learn, SQLAlchemy/Psycopg, PostgreSQL, and SQL.
@@ -282,13 +282,27 @@ supplyguard/
 
 The command validates/reuses source files, rebuilds warehouse features, fits or reuses a versioned V3C model, persists next-day forecasts and publishes checked inventory decisions atomically. Existing synthetic scenario inputs are reused by default. Use `config/pipeline.toml` for the budget and policy settings.
 
-Operational artifacts and logs live under `outputs/production/`. Run, stage, model and forecast records live in PostgreSQL's `ops` schema. The approved PBIX remains an unchanged imported snapshot until manually refreshed.
+Operational artifacts and logs live under `outputs/production/`. Run, stage, model and forecast records live in PostgreSQL's `ops` schema. The approved PBIX is an imported snapshot; refresh after a successful pipeline run. Phase 10 adds stable forecast BI interfaces and an outlook page.
 
 The SQL commands above document the original development sequence. **Use the pipeline for current decision rebuilds:** script 028 now requires a persisted forecast run and cutoff supplied by the pipeline. See [Phase 9 operations](docs/phase9_operations.md) for setup, test commands, recovery, scheduling and limitations.
 
-## Phase 10: next
+## Phase 10: forecast-to-action demonstration
 
-Portfolio packaging, a reproducible demonstration, repository documentation, deployment choices and interview readiness.
+The Forecast & Inventory Outlook page connects observed history and held-out accuracy to an explicitly dated next-day forecast, synthetic inventory, risk, constrained replenishment, funded quantity and action. The seven approved pages remain, with factual currency/lineage corrections.
+
+Stable PostgreSQL interfaces serve observed history, historical evaluation and the exact operational forecast used by the published decisions. Historical evaluation is fingerprinted and checked against observed sales; it remains separate from operational model refitting.
+
+- [BI interfaces, refresh and demo](docs/phase10_bi.md)
+- [Architecture and inventory semantics](docs/architecture.md)
+- [Interview pitch, technical defence and CV bullets](docs/interview_readiness.md)
+- [Execution plan](docs/phase10_plan.md)
+- [QA results and representative cases](docs/phase10_qa.md)
+
+All 25 tests passed; the complete batch run and Power BI refresh succeeded. See the QA report for run lineage and limitations. No business savings are inferred from scenario results.
+
+![Forecast and observed history](docs/assets/outlook-history-forecast.png)
+
+![Inventory risk through funded action](docs/assets/outlook-risk-action.png)
 
 ## Technical note
 

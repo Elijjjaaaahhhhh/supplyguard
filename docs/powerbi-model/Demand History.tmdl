@@ -1,0 +1,42 @@
+/// Historical observed sales for the scenario store-product sample.
+table 'Demand History'
+	lineageTag: cd1a8547-42a9-4545-9cb7-af87ea49eec3
+
+	column store_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 84af4f4d-436c-4197-91a8-6c5c26136ea8
+		summarizeBy: none
+		sourceColumn: store_id
+
+	column product_id
+		dataType: int64
+		formatString: 0
+		lineageTag: a576d327-8e91-41c9-ae62-65e6a2c1e3d9
+		summarizeBy: none
+		sourceColumn: product_id
+
+	column dt
+		dataType: dateTime
+		formatString: dd MMM yyyy
+		lineageTag: a1e3bb2d-1d2c-498c-b255-ead6d045654f
+		summarizeBy: none
+		sourceColumn: dt
+
+	column sale_amount
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 6f2f03e0-79f2-4ba2-86c9-e06b70247a47
+		summarizeBy: none
+		sourceColumn: sale_amount
+
+	column stockout_hours
+		dataType: int64
+		formatString: 0
+		lineageTag: 6b2dd7ef-d24f-4c88-b6e1-3ffb856493f6
+		summarizeBy: none
+		sourceColumn: stockout_hours
+
+	partition 'Demand History' = m
+		mode: import
+		source = let Source = PostgreSQL.Database("localhost:5432", "supplyguard"), View = Source{[Schema="mart", Item="bi_demand_history"]}[Data] in View

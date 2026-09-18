@@ -1,0 +1,3454 @@
+{
+  "run": {
+    "run_id": "93fb3e65-00ba-4034-9716-bc42dda77790",
+    "status": "success",
+    "as_of_date": "2024-07-02",
+    "model_id": "b9789f1a3402d4b0c0721679",
+    "summary": {
+      "budget": 300000.0,
+      "scenario_action": "reused",
+      "allocated_capital": 299990.13,
+      "control_tower_rows": 1000,
+      "forecast_lineage_rows": 1000
+    }
+  },
+  "totals": {
+    "series": 1000,
+    "allocated_capital": 299990.13,
+    "funded_quantity": 11140.0,
+    "funded_orders": 84,
+    "capital_constrained": 575,
+    "capacity_constrained": 401,
+    "shelf_life_constrained": 39
+  },
+  "statuses": {
+    "CONSTRAINED - ESCALATE": 482,
+    "HEALTHY": 297,
+    "HIGH - ORDER NOW": 23,
+    "REORDER - FUNDED": 61,
+    "REORDER - UNFUNDED": 51,
+    "WATCH": 86
+  },
+  "cases": {
+    "healthy": {
+      "outlook": {
+        "store_id": 1,
+        "product_id": 38,
+        "as_of_date": "2024-07-02",
+        "forecast_date": "2024-07-03",
+        "predicted_demand": 0.15560638926199455,
+        "model_id": "b9789f1a3402d4b0c0721679",
+        "forecast_run_id": "93fb3e65-00ba-4034-9716-bc42dda77790",
+        "generated_at": "2026-09-18 01:43:39.370848+01:00",
+        "input_policy": "commercial=carry_forward;holiday=0;one_day_level_for_inventory",
+        "on_hand_quantity": 9.37,
+        "on_order_quantity": 0.0,
+        "backorder_quantity": 0.57,
+        "inventory_position": 8.799999999999999,
+        "days_of_supply": 60.21603640081723,
+        "average_lead_time_days": 5.08,
+        "coverage_gap_days": 0.0,
+        "safety_stock": 6.360375453825073,
+        "reorder_point": 7.150855911276006,
+        "raw_order_quantity": 1.9173543531609223,
+        "final_recommended_quantity": 0.0,
+        "allocated_quantity": 0.0,
+        "allocated_order_value": 0.0,
+        "capital_constrained": false,
+        "capacity_constrained": false,
+        "shelf_life_constrained": false,
+        "urgency_score": null,
+        "urgency_band": null,
+        "control_tower_status": "HEALTHY",
+        "recommended_action": "No immediate replenishment action",
+        "funding_status": "NOT REQUIRED",
+        "minimum_order_quantity": 5.05,
+        "case_pack_size": 24.0,
+        "scenario_budget": 300000.0
+      },
+      "history": [
+        {
+          "dt": "2024-03-28",
+          "sale_amount": 0.4,
+          "stockout_hours": 5
+        },
+        {
+          "dt": "2024-03-29",
+          "sale_amount": 0.3,
+          "stockout_hours": 12
+        },
+        {
+          "dt": "2024-03-30",
+          "sale_amount": 0.3,
+          "stockout_hours": 3
+        },
+        {
+          "dt": "2024-03-31",
+          "sale_amount": 0.2,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-01",
+          "sale_amount": 0.1,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-02",
+          "sale_amount": 0.1,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-03",
+          "sale_amount": 0.1,
+          "stockout_hours": 1
+        },
+        {
+          "dt": "2024-04-04",
+          "sale_amount": 0.2,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-05",
+          "sale_amount": 0.1,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-06",
+          "sale_amount": 0.3,
+          "stockout_hours": 11
+        },
+        {
+          "dt": "2024-04-07",
+          "sale_amount": 0.2,
+          "stockout_hours": 4
+        },
+        {
+          "dt": "2024-04-08",
+          "sale_amount": 0.2,
+          "stockout_hours": 12
+        },
+        {
+          "dt": "2024-04-09",
+          "sale_amount": 0.2,
+          "stockout_hours": 11
+        },
+        {
+          "dt": "2024-04-10",
+          "sale_amount": 0.7,
+          "stockout_hours": 1
+        },
+        {
+          "dt": "2024-04-11",
+          "sale_amount": 0.4,
+          "stockout_hours": 12
+        },
+        {
+          "dt": "2024-04-12",
+          "sale_amount": 0.7,
+          "stockout_hours": 9
+        },
+        {
+          "dt": "2024-04-13",
+          "sale_amount": 1.4,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-14",
+          "sale_amount": 0.3,
+          "stockout_hours": 12
+        },
+        {
+          "dt": "2024-04-15",
+          "sale_amount": 1.0,
+          "stockout_hours": 2
+        },
+        {
+          "dt": "2024-04-16",
+          "sale_amount": 0.7,
+          "stockout_hours": 13
+        },
+        {
+          "dt": "2024-04-17",
+          "sale_amount": 0.4,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-18",
+          "sale_amount": 0.3,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-19",
+          "sale_amount": 0.0,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-20",
+          "sale_amount": 0.3,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-21",
+          "sale_amount": 0.2,
+          "stockout_hours": 1
+        },
+        {
+          "dt": "2024-04-22",
+          "sale_amount": 0.4,
+          "stockout_hours": 10
+        },
+        {
+          "dt": "2024-04-23",
+          "sale_amount": 0.2,
+          "stockout_hours": 14
+        },
+        {
+          "dt": "2024-04-24",
+          "sale_amount": 0.5,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-25",
+          "sale_amount": 0.2,
+          "stockout_hours": 4
+        },
+        {
+          "dt": "2024-04-26",
+          "sale_amount": 0.4,
+          "stockout_hours": 11
+        },
+        {
+          "dt": "2024-04-27",
+          "sale_amount": 1.1,
+          "stockout_hours": 9
+        },
+        {
+          "dt": "2024-04-28",
+          "sale_amount": 0.6,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-29",
+          "sale_amount": 0.4,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-30",
+          "sale_amount": 0.7,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-01",
+          "sale_amount": 0.0,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-02",
+          "sale_amount": 0.1,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-03",
+          "sale_amount": 0.3,
+          "stockout_hours": 10
+        },
+        {
+          "dt": "2024-05-04",
+          "sale_amount": 0.5,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-05",
+          "sale_amount": 0.6,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-06",
+          "sale_amount": 0.0,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-07",
+          "sale_amount": 0.1,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-08",
+          "sale_amount": 0.5,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-09",
+          "sale_amount": 0.4,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-10",
+          "sale_amount": 0.8,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-11",
+          "sale_amount": 0.6,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-12",
+          "sale_amount": 0.8,
+          "stockout_hours": 2
+        },
+        {
+          "dt": "2024-05-13",
+          "sale_amount": 0.9,
+          "stockout_hours": 8
+        },
+        {
+          "dt": "2024-05-14",
+          "sale_amount": 4.7,
+          "stockout_hours": 4
+        },
+        {
+          "dt": "2024-05-15",
+          "sale_amount": 0.5,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-16",
+          "sale_amount": 0.4,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-17",
+          "sale_amount": 0.4,
+          "stockout_hours": 2
+        },
+        {
+          "dt": "2024-05-18",
+          "sale_amount": 4.6,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-19",
+          "sale_amount": 0.8,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-20",
+          "sale_amount": 0.3,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-21",
+          "sale_amount": 4.8,
+          "stockout_hours": 8
+        },
+        {
+          "dt": "2024-05-22",
+          "sale_amount": 0.4,
+          "stockout_hours": 6
+        },
+        {
+          "dt": "2024-05-23",
+          "sale_amount": 0.6,
+          "stockout_hours": 4
+        },
+        {
+          "dt": "2024-05-24",
+          "sale_amount": 0.1,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-25",
+          "sale_amount": 4.5,
+          "stockout_hours": 3
+        },
+        {
+          "dt": "2024-05-26",
+          "sale_amount": 0.4,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-27",
+          "sale_amount": 0.3,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-28",
+          "sale_amount": 0.2,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-29",
+          "sale_amount": 0.2,
+          "stockout_hours": 2
+        },
+        {
+          "dt": "2024-05-30",
+          "sale_amount": 0.1,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-31",
+          "sale_amount": 0.2,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-01",
+          "sale_amount": 5.0,
+          "stockout_hours": 8
+        },
+        {
+          "dt": "2024-06-02",
+          "sale_amount": 0.5,
+          "stockout_hours": 5
+        },
+        {
+          "dt": "2024-06-03",
+          "sale_amount": 0.4,
+          "stockout_hours": 10
+        },
+        {
+          "dt": "2024-06-04",
+          "sale_amount": 6.1,
+          "stockout_hours": 1
+        },
+        {
+          "dt": "2024-06-05",
+          "sale_amount": 0.2,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-06",
+          "sale_amount": 0.2,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-07",
+          "sale_amount": 0.5,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-08",
+          "sale_amount": 4.8,
+          "stockout_hours": 1
+        },
+        {
+          "dt": "2024-06-09",
+          "sale_amount": 0.5,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-10",
+          "sale_amount": 0.5,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-11",
+          "sale_amount": 4.8,
+          "stockout_hours": 4
+        },
+        {
+          "dt": "2024-06-12",
+          "sale_amount": 0.4,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-13",
+          "sale_amount": 0.0,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-14",
+          "sale_amount": 0.1,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-15",
+          "sale_amount": 0.2,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-16",
+          "sale_amount": 0.3,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-17",
+          "sale_amount": 0.3,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-18",
+          "sale_amount": 4.6,
+          "stockout_hours": 9
+        },
+        {
+          "dt": "2024-06-19",
+          "sale_amount": 0.3,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-20",
+          "sale_amount": 0.1,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-21",
+          "sale_amount": 0.0,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-22",
+          "sale_amount": 4.0,
+          "stockout_hours": 12
+        },
+        {
+          "dt": "2024-06-23",
+          "sale_amount": 0.4,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-24",
+          "sale_amount": 0.1,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-25",
+          "sale_amount": 0.0,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-26",
+          "sale_amount": 0.0,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-27",
+          "sale_amount": 0.0,
+          "stockout_hours": 1
+        },
+        {
+          "dt": "2024-06-28",
+          "sale_amount": 0.4,
+          "stockout_hours": 10
+        },
+        {
+          "dt": "2024-06-29",
+          "sale_amount": 8.8,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-30",
+          "sale_amount": 0.1,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-07-01",
+          "sale_amount": 0.1,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-07-02",
+          "sale_amount": 0.3,
+          "stockout_hours": 2
+        }
+      ],
+      "evaluation": [
+        {
+          "dt": "2024-06-26",
+          "actual": 0.0,
+          "prediction": 0.1838678924773105,
+          "rolling_prediction": 0.7000000000000001
+        },
+        {
+          "dt": "2024-06-27",
+          "actual": 0.0,
+          "prediction": 0.1355116960595311,
+          "rolling_prediction": 0.6571428571428571
+        },
+        {
+          "dt": "2024-06-28",
+          "actual": 0.4,
+          "prediction": 0.1212139221744626,
+          "rolling_prediction": 0.6428571428571429
+        },
+        {
+          "dt": "2024-06-29",
+          "actual": 8.8,
+          "prediction": 2.509175842476653,
+          "rolling_prediction": 0.7000000000000001
+        },
+        {
+          "dt": "2024-06-30",
+          "actual": 0.1,
+          "prediction": 0.628016516086108,
+          "rolling_prediction": 1.385714285714286
+        },
+        {
+          "dt": "2024-07-01",
+          "actual": 0.1,
+          "prediction": 0.3400219005790195,
+          "rolling_prediction": 1.342857142857143
+        },
+        {
+          "dt": "2024-07-02",
+          "actual": 0.3,
+          "prediction": 0.5559528748474163,
+          "rolling_prediction": 1.342857142857143
+        }
+      ],
+      "recomputed_model_prediction": 0.15560638926199455,
+      "math_checks": "PASS"
+    },
+    "watch": {
+      "outlook": {
+        "store_id": 9,
+        "product_id": 115,
+        "as_of_date": "2024-07-02",
+        "forecast_date": "2024-07-03",
+        "predicted_demand": 0.5180300969916213,
+        "model_id": "b9789f1a3402d4b0c0721679",
+        "forecast_run_id": "93fb3e65-00ba-4034-9716-bc42dda77790",
+        "generated_at": "2026-09-18 01:43:39.370848+01:00",
+        "input_policy": "commercial=carry_forward;holiday=0;one_day_level_for_inventory",
+        "on_hand_quantity": 6.48,
+        "on_order_quantity": 3.06,
+        "backorder_quantity": 0.0,
+        "inventory_position": 9.540000000000001,
+        "days_of_supply": 12.508925712292754,
+        "average_lead_time_days": 11.55,
+        "coverage_gap_days": 0.0,
+        "safety_stock": 2.252659534058069,
+        "reorder_point": 8.235907154311295,
+        "raw_order_quantity": 3.591291570882115,
+        "final_recommended_quantity": 0.0,
+        "allocated_quantity": 0.0,
+        "allocated_order_value": 0.0,
+        "capital_constrained": false,
+        "capacity_constrained": false,
+        "shelf_life_constrained": false,
+        "urgency_score": null,
+        "urgency_band": null,
+        "control_tower_status": "WATCH",
+        "recommended_action": "Monitor inventory coverage closely",
+        "funding_status": "NOT REQUIRED",
+        "minimum_order_quantity": 2.09,
+        "case_pack_size": 12.0,
+        "scenario_budget": 300000.0
+      },
+      "history": [
+        {
+          "dt": "2024-03-28",
+          "sale_amount": 0.4,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-03-29",
+          "sale_amount": 0.3,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-03-30",
+          "sale_amount": 0.3,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-03-31",
+          "sale_amount": 0.9,
+          "stockout_hours": 1
+        },
+        {
+          "dt": "2024-04-01",
+          "sale_amount": 0.4,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-02",
+          "sale_amount": 0.9,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-03",
+          "sale_amount": 0.2,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-04",
+          "sale_amount": 0.4,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-05",
+          "sale_amount": 0.5,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-06",
+          "sale_amount": 1.3,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-07",
+          "sale_amount": 0.8,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-08",
+          "sale_amount": 1.1,
+          "stockout_hours": 3
+        },
+        {
+          "dt": "2024-04-09",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-04-10",
+          "sale_amount": 0.7,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-11",
+          "sale_amount": 1.3,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-12",
+          "sale_amount": 0.9,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-13",
+          "sale_amount": 0.1,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-14",
+          "sale_amount": 0.7,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-15",
+          "sale_amount": 0.38,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-16",
+          "sale_amount": 0.1,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-04-17",
+          "sale_amount": 1.0,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-18",
+          "sale_amount": 0.2,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-19",
+          "sale_amount": 0.7,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-20",
+          "sale_amount": 0.8,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-21",
+          "sale_amount": 1.0,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-22",
+          "sale_amount": 0.7,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-23",
+          "sale_amount": 0.6,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-24",
+          "sale_amount": 0.6,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-25",
+          "sale_amount": 0.6,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-26",
+          "sale_amount": 0.9,
+          "stockout_hours": 2
+        },
+        {
+          "dt": "2024-04-27",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-04-28",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-04-29",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-04-30",
+          "sale_amount": 1.3,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-01",
+          "sale_amount": 1.1,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-02",
+          "sale_amount": 1.0,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-03",
+          "sale_amount": 0.3,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-04",
+          "sale_amount": 0.2,
+          "stockout_hours": 11
+        },
+        {
+          "dt": "2024-05-05",
+          "sale_amount": 0.1,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-05-06",
+          "sale_amount": 0.2,
+          "stockout_hours": 9
+        },
+        {
+          "dt": "2024-05-07",
+          "sale_amount": 1.3,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-08",
+          "sale_amount": 0.4,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-09",
+          "sale_amount": 0.6,
+          "stockout_hours": 9
+        },
+        {
+          "dt": "2024-05-10",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-05-11",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-05-12",
+          "sale_amount": 0.2,
+          "stockout_hours": 1
+        },
+        {
+          "dt": "2024-05-13",
+          "sale_amount": 0.7,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-14",
+          "sale_amount": 0.0,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-15",
+          "sale_amount": 0.1,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-16",
+          "sale_amount": 0.2,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-17",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-05-18",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-05-19",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-05-20",
+          "sale_amount": 0.3,
+          "stockout_hours": 1
+        },
+        {
+          "dt": "2024-05-21",
+          "sale_amount": 0.7,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-22",
+          "sale_amount": 0.9,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-23",
+          "sale_amount": 0.7,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-24",
+          "sale_amount": 0.7,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-25",
+          "sale_amount": 0.6,
+          "stockout_hours": 8
+        },
+        {
+          "dt": "2024-05-26",
+          "sale_amount": 0.4,
+          "stockout_hours": 1
+        },
+        {
+          "dt": "2024-05-27",
+          "sale_amount": 0.0,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-28",
+          "sale_amount": 0.8,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-29",
+          "sale_amount": 0.7,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-30",
+          "sale_amount": 0.2,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-31",
+          "sale_amount": 0.77,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-01",
+          "sale_amount": 0.1,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-02",
+          "sale_amount": 0.0,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-03",
+          "sale_amount": 0.27,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-04",
+          "sale_amount": 0.2,
+          "stockout_hours": 8
+        },
+        {
+          "dt": "2024-06-05",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-06-06",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-06-07",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-06-08",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-06-09",
+          "sale_amount": 0.2,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-10",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-06-11",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-06-12",
+          "sale_amount": 0.4,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-13",
+          "sale_amount": 0.5,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-14",
+          "sale_amount": 0.4,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-15",
+          "sale_amount": 0.6,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-16",
+          "sale_amount": 0.3,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-17",
+          "sale_amount": 0.1,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-18",
+          "sale_amount": 0.3,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-19",
+          "sale_amount": 0.2,
+          "stockout_hours": 12
+        },
+        {
+          "dt": "2024-06-20",
+          "sale_amount": 0.2,
+          "stockout_hours": 2
+        },
+        {
+          "dt": "2024-06-21",
+          "sale_amount": 0.7,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-22",
+          "sale_amount": 0.0,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-23",
+          "sale_amount": 0.2,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-24",
+          "sale_amount": 1.1,
+          "stockout_hours": 3
+        },
+        {
+          "dt": "2024-06-25",
+          "sale_amount": 1.1,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-26",
+          "sale_amount": 0.4,
+          "stockout_hours": 7
+        },
+        {
+          "dt": "2024-06-27",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-06-28",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-06-29",
+          "sale_amount": 0.3,
+          "stockout_hours": 2
+        },
+        {
+          "dt": "2024-06-30",
+          "sale_amount": 0.6,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-07-01",
+          "sale_amount": 1.1,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-07-02",
+          "sale_amount": 0.4,
+          "stockout_hours": 0
+        }
+      ],
+      "evaluation": [
+        {
+          "dt": "2024-06-26",
+          "actual": 0.4,
+          "prediction": 0.5591500051903262,
+          "rolling_prediction": 0.5000000000000001
+        },
+        {
+          "dt": "2024-06-27",
+          "actual": 0.0,
+          "prediction": 0.4489948325417032,
+          "rolling_prediction": 0.5285714285714286
+        },
+        {
+          "dt": "2024-06-28",
+          "actual": 0.0,
+          "prediction": 0.3985949075681139,
+          "rolling_prediction": 0.5
+        },
+        {
+          "dt": "2024-06-29",
+          "actual": 0.3,
+          "prediction": 0.4340021691200655,
+          "rolling_prediction": 0.4
+        },
+        {
+          "dt": "2024-06-30",
+          "actual": 0.6,
+          "prediction": 0.5009253343543709,
+          "rolling_prediction": 0.4428571428571429
+        },
+        {
+          "dt": "2024-07-01",
+          "actual": 1.1,
+          "prediction": 0.5329584896559053,
+          "rolling_prediction": 0.5
+        },
+        {
+          "dt": "2024-07-02",
+          "actual": 0.4,
+          "prediction": 0.6528401789198466,
+          "rolling_prediction": 0.5
+        }
+      ],
+      "recomputed_model_prediction": 0.5180300969916213,
+      "math_checks": "PASS"
+    },
+    "critical": {
+      "outlook": {
+        "store_id": 21,
+        "product_id": 267,
+        "as_of_date": "2024-07-02",
+        "forecast_date": "2024-07-03",
+        "predicted_demand": 25.013409842598364,
+        "model_id": "b9789f1a3402d4b0c0721679",
+        "forecast_run_id": "93fb3e65-00ba-4034-9716-bc42dda77790",
+        "generated_at": "2026-09-18 01:43:39.370848+01:00",
+        "input_policy": "commercial=carry_forward;holiday=0;one_day_level_for_inventory",
+        "on_hand_quantity": 67.17,
+        "on_order_quantity": 29.12,
+        "backorder_quantity": 0.0,
+        "inventory_position": 96.29,
+        "days_of_supply": 2.6853595900231113,
+        "average_lead_time_days": 12.95,
+        "coverage_gap_days": 10.264640409976888,
+        "safety_stock": 101.93846084463983,
+        "reorder_point": 425.86211830628866,
+        "raw_order_quantity": 530.9300675392055,
+        "final_recommended_quantity": 0.0,
+        "allocated_quantity": 0.0,
+        "allocated_order_value": 0.0,
+        "capital_constrained": true,
+        "capacity_constrained": true,
+        "shelf_life_constrained": false,
+        "urgency_score": 71.53178801733512,
+        "urgency_band": "CRITICAL",
+        "control_tower_status": "CONSTRAINED - ESCALATE",
+        "recommended_action": "Urgent: resolve procurement/physical constraints; reassess funding",
+        "funding_status": "BLOCKED",
+        "minimum_order_quantity": 121.65,
+        "case_pack_size": 24.0,
+        "scenario_budget": 300000.0
+      },
+      "history": [
+        {
+          "dt": "2024-03-28",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-03-29",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-03-30",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-03-31",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-04-01",
+          "sale_amount": 0.5,
+          "stockout_hours": 15
+        },
+        {
+          "dt": "2024-04-02",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-04-03",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-04-04",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-04-05",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-04-06",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-04-07",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-04-08",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-04-09",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-04-10",
+          "sale_amount": 0.2,
+          "stockout_hours": 15
+        },
+        {
+          "dt": "2024-04-11",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-04-12",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-04-13",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-04-14",
+          "sale_amount": 0.3,
+          "stockout_hours": 15
+        },
+        {
+          "dt": "2024-04-15",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-04-16",
+          "sale_amount": 2.8,
+          "stockout_hours": 13
+        },
+        {
+          "dt": "2024-04-17",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-04-18",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-04-19",
+          "sale_amount": 1.0,
+          "stockout_hours": 15
+        },
+        {
+          "dt": "2024-04-20",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-04-21",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-04-22",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-04-23",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-04-24",
+          "sale_amount": 1.0,
+          "stockout_hours": 13
+        },
+        {
+          "dt": "2024-04-25",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-04-26",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-04-27",
+          "sale_amount": 15.5,
+          "stockout_hours": 6
+        },
+        {
+          "dt": "2024-04-28",
+          "sale_amount": 14.0,
+          "stockout_hours": 8
+        },
+        {
+          "dt": "2024-04-29",
+          "sale_amount": 15.1,
+          "stockout_hours": 4
+        },
+        {
+          "dt": "2024-04-30",
+          "sale_amount": 14.1,
+          "stockout_hours": 5
+        },
+        {
+          "dt": "2024-05-01",
+          "sale_amount": 14.8,
+          "stockout_hours": 8
+        },
+        {
+          "dt": "2024-05-02",
+          "sale_amount": 16.0,
+          "stockout_hours": 5
+        },
+        {
+          "dt": "2024-05-03",
+          "sale_amount": 16.0,
+          "stockout_hours": 6
+        },
+        {
+          "dt": "2024-05-04",
+          "sale_amount": 18.0,
+          "stockout_hours": 6
+        },
+        {
+          "dt": "2024-05-05",
+          "sale_amount": 13.5,
+          "stockout_hours": 11
+        },
+        {
+          "dt": "2024-05-06",
+          "sale_amount": 13.7,
+          "stockout_hours": 7
+        },
+        {
+          "dt": "2024-05-07",
+          "sale_amount": 13.0,
+          "stockout_hours": 8
+        },
+        {
+          "dt": "2024-05-08",
+          "sale_amount": 15.0,
+          "stockout_hours": 5
+        },
+        {
+          "dt": "2024-05-09",
+          "sale_amount": 16.0,
+          "stockout_hours": 5
+        },
+        {
+          "dt": "2024-05-10",
+          "sale_amount": 15.5,
+          "stockout_hours": 6
+        },
+        {
+          "dt": "2024-05-11",
+          "sale_amount": 18.0,
+          "stockout_hours": 6
+        },
+        {
+          "dt": "2024-05-12",
+          "sale_amount": 4.0,
+          "stockout_hours": 14
+        },
+        {
+          "dt": "2024-05-13",
+          "sale_amount": 9.0,
+          "stockout_hours": 9
+        },
+        {
+          "dt": "2024-05-14",
+          "sale_amount": 18.0,
+          "stockout_hours": 4
+        },
+        {
+          "dt": "2024-05-15",
+          "sale_amount": 12.4,
+          "stockout_hours": 6
+        },
+        {
+          "dt": "2024-05-16",
+          "sale_amount": 12.0,
+          "stockout_hours": 7
+        },
+        {
+          "dt": "2024-05-17",
+          "sale_amount": 21.0,
+          "stockout_hours": 1
+        },
+        {
+          "dt": "2024-05-18",
+          "sale_amount": 15.2,
+          "stockout_hours": 9
+        },
+        {
+          "dt": "2024-05-19",
+          "sale_amount": 20.8,
+          "stockout_hours": 5
+        },
+        {
+          "dt": "2024-05-20",
+          "sale_amount": 18.0,
+          "stockout_hours": 4
+        },
+        {
+          "dt": "2024-05-21",
+          "sale_amount": 18.5,
+          "stockout_hours": 6
+        },
+        {
+          "dt": "2024-05-22",
+          "sale_amount": 18.0,
+          "stockout_hours": 3
+        },
+        {
+          "dt": "2024-05-23",
+          "sale_amount": 18.3,
+          "stockout_hours": 3
+        },
+        {
+          "dt": "2024-05-24",
+          "sale_amount": 22.0,
+          "stockout_hours": 2
+        },
+        {
+          "dt": "2024-05-25",
+          "sale_amount": 19.8,
+          "stockout_hours": 6
+        },
+        {
+          "dt": "2024-05-26",
+          "sale_amount": 18.8,
+          "stockout_hours": 7
+        },
+        {
+          "dt": "2024-05-27",
+          "sale_amount": 21.0,
+          "stockout_hours": 5
+        },
+        {
+          "dt": "2024-05-28",
+          "sale_amount": 24.0,
+          "stockout_hours": 1
+        },
+        {
+          "dt": "2024-05-29",
+          "sale_amount": 25.3,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-30",
+          "sale_amount": 27.8,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-31",
+          "sale_amount": 18.8,
+          "stockout_hours": 4
+        },
+        {
+          "dt": "2024-06-01",
+          "sale_amount": 24.0,
+          "stockout_hours": 1
+        },
+        {
+          "dt": "2024-06-02",
+          "sale_amount": 27.0,
+          "stockout_hours": 5
+        },
+        {
+          "dt": "2024-06-03",
+          "sale_amount": 18.0,
+          "stockout_hours": 5
+        },
+        {
+          "dt": "2024-06-04",
+          "sale_amount": 12.5,
+          "stockout_hours": 9
+        },
+        {
+          "dt": "2024-06-05",
+          "sale_amount": 28.0,
+          "stockout_hours": 1
+        },
+        {
+          "dt": "2024-06-06",
+          "sale_amount": 23.9,
+          "stockout_hours": 1
+        },
+        {
+          "dt": "2024-06-07",
+          "sale_amount": 24.9,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-08",
+          "sale_amount": 26.7,
+          "stockout_hours": 1
+        },
+        {
+          "dt": "2024-06-09",
+          "sale_amount": 23.0,
+          "stockout_hours": 3
+        },
+        {
+          "dt": "2024-06-10",
+          "sale_amount": 24.5,
+          "stockout_hours": 2
+        },
+        {
+          "dt": "2024-06-11",
+          "sale_amount": 24.5,
+          "stockout_hours": 2
+        },
+        {
+          "dt": "2024-06-12",
+          "sale_amount": 24.0,
+          "stockout_hours": 1
+        },
+        {
+          "dt": "2024-06-13",
+          "sale_amount": 22.6,
+          "stockout_hours": 2
+        },
+        {
+          "dt": "2024-06-14",
+          "sale_amount": 24.0,
+          "stockout_hours": 1
+        },
+        {
+          "dt": "2024-06-15",
+          "sale_amount": 27.0,
+          "stockout_hours": 1
+        },
+        {
+          "dt": "2024-06-16",
+          "sale_amount": 28.0,
+          "stockout_hours": 2
+        },
+        {
+          "dt": "2024-06-17",
+          "sale_amount": 24.0,
+          "stockout_hours": 1
+        },
+        {
+          "dt": "2024-06-18",
+          "sale_amount": 24.1,
+          "stockout_hours": 2
+        },
+        {
+          "dt": "2024-06-19",
+          "sale_amount": 25.0,
+          "stockout_hours": 1
+        },
+        {
+          "dt": "2024-06-20",
+          "sale_amount": 23.1,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-21",
+          "sale_amount": 31.6,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-22",
+          "sale_amount": 32.1,
+          "stockout_hours": 4
+        },
+        {
+          "dt": "2024-06-23",
+          "sale_amount": 31.3,
+          "stockout_hours": 1
+        },
+        {
+          "dt": "2024-06-24",
+          "sale_amount": 24.1,
+          "stockout_hours": 1
+        },
+        {
+          "dt": "2024-06-25",
+          "sale_amount": 29.1,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-26",
+          "sale_amount": 28.7,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-27",
+          "sale_amount": 27.3,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-28",
+          "sale_amount": 29.9,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-29",
+          "sale_amount": 31.5,
+          "stockout_hours": 6
+        },
+        {
+          "dt": "2024-06-30",
+          "sale_amount": 32.0,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-07-01",
+          "sale_amount": 30.7,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-07-02",
+          "sale_amount": 32.3,
+          "stockout_hours": 0
+        }
+      ],
+      "evaluation": [
+        {
+          "dt": "2024-06-26",
+          "actual": 28.7,
+          "prediction": 23.020798483050317,
+          "rolling_prediction": 28.042857142857144
+        },
+        {
+          "dt": "2024-06-27",
+          "actual": 27.3,
+          "prediction": 22.71587928525558,
+          "rolling_prediction": 28.571428571428573
+        },
+        {
+          "dt": "2024-06-28",
+          "actual": 29.9,
+          "prediction": 23.807986990451106,
+          "rolling_prediction": 29.17142857142857
+        },
+        {
+          "dt": "2024-06-29",
+          "actual": 31.5,
+          "prediction": 26.56960216907785,
+          "rolling_prediction": 28.928571428571427
+        },
+        {
+          "dt": "2024-06-30",
+          "actual": 32.0,
+          "prediction": 27.49703368966805,
+          "rolling_prediction": 28.842857142857145
+        },
+        {
+          "dt": "2024-07-01",
+          "actual": 30.7,
+          "prediction": 22.74074409814717,
+          "rolling_prediction": 28.942857142857143
+        },
+        {
+          "dt": "2024-07-02",
+          "actual": 32.3,
+          "prediction": 22.90853944330585,
+          "rolling_prediction": 29.885714285714283
+        }
+      ],
+      "recomputed_model_prediction": 25.013409842598364,
+      "math_checks": "PASS"
+    },
+    "constrained": {
+      "outlook": {
+        "store_id": 0,
+        "product_id": 21,
+        "as_of_date": "2024-07-02",
+        "forecast_date": "2024-07-03",
+        "predicted_demand": 0.7644317524391468,
+        "model_id": "b9789f1a3402d4b0c0721679",
+        "forecast_run_id": "93fb3e65-00ba-4034-9716-bc42dda77790",
+        "generated_at": "2026-09-18 01:43:39.370848+01:00",
+        "input_policy": "commercial=carry_forward;holiday=0;one_day_level_for_inventory",
+        "on_hand_quantity": 6.98,
+        "on_order_quantity": 4.41,
+        "backorder_quantity": 0.73,
+        "inventory_position": 10.66,
+        "days_of_supply": 9.130965554123353,
+        "average_lead_time_days": 13.95,
+        "coverage_gap_days": 4.819034445876646,
+        "safety_stock": 3.8007851418838325,
+        "reorder_point": 14.46460808840993,
+        "raw_order_quantity": 9.193851943105916,
+        "final_recommended_quantity": 0.0,
+        "allocated_quantity": 0.0,
+        "allocated_order_value": 0.0,
+        "capital_constrained": true,
+        "capacity_constrained": false,
+        "shelf_life_constrained": false,
+        "urgency_score": 23.3074392908682,
+        "urgency_band": "LOW",
+        "control_tower_status": "CONSTRAINED - ESCALATE",
+        "recommended_action": "Review MOQ, capacity, capital or shelf-life constraint",
+        "funding_status": "BLOCKED",
+        "minimum_order_quantity": 4.19,
+        "case_pack_size": 1.0,
+        "scenario_budget": 300000.0
+      },
+      "history": [
+        {
+          "dt": "2024-03-28",
+          "sale_amount": 0.5,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-03-29",
+          "sale_amount": 0.2,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-03-30",
+          "sale_amount": 0.4,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-03-31",
+          "sale_amount": 0.6,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-01",
+          "sale_amount": 0.6,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-02",
+          "sale_amount": 0.4,
+          "stockout_hours": 5
+        },
+        {
+          "dt": "2024-04-03",
+          "sale_amount": 0.1,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-04",
+          "sale_amount": 0.5,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-05",
+          "sale_amount": 0.3,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-06",
+          "sale_amount": 0.5,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-07",
+          "sale_amount": 0.5,
+          "stockout_hours": 4
+        },
+        {
+          "dt": "2024-04-08",
+          "sale_amount": 0.3,
+          "stockout_hours": 9
+        },
+        {
+          "dt": "2024-04-09",
+          "sale_amount": 0.3,
+          "stockout_hours": 13
+        },
+        {
+          "dt": "2024-04-10",
+          "sale_amount": 0.5,
+          "stockout_hours": 5
+        },
+        {
+          "dt": "2024-04-11",
+          "sale_amount": 0.6,
+          "stockout_hours": 1
+        },
+        {
+          "dt": "2024-04-12",
+          "sale_amount": 0.6,
+          "stockout_hours": 12
+        },
+        {
+          "dt": "2024-04-13",
+          "sale_amount": 0.8,
+          "stockout_hours": 9
+        },
+        {
+          "dt": "2024-04-14",
+          "sale_amount": 0.9,
+          "stockout_hours": 11
+        },
+        {
+          "dt": "2024-04-15",
+          "sale_amount": 0.6,
+          "stockout_hours": 12
+        },
+        {
+          "dt": "2024-04-16",
+          "sale_amount": 0.3,
+          "stockout_hours": 11
+        },
+        {
+          "dt": "2024-04-17",
+          "sale_amount": 0.8,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-18",
+          "sale_amount": 1.0,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-19",
+          "sale_amount": 1.4,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-20",
+          "sale_amount": 0.1,
+          "stockout_hours": 14
+        },
+        {
+          "dt": "2024-04-21",
+          "sale_amount": 0.6,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-22",
+          "sale_amount": 0.6,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-23",
+          "sale_amount": 0.6,
+          "stockout_hours": 5
+        },
+        {
+          "dt": "2024-04-24",
+          "sale_amount": 0.5,
+          "stockout_hours": 14
+        },
+        {
+          "dt": "2024-04-25",
+          "sale_amount": 0.8,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-26",
+          "sale_amount": 0.1,
+          "stockout_hours": 15
+        },
+        {
+          "dt": "2024-04-27",
+          "sale_amount": 0.4,
+          "stockout_hours": 8
+        },
+        {
+          "dt": "2024-04-28",
+          "sale_amount": 0.7,
+          "stockout_hours": 12
+        },
+        {
+          "dt": "2024-04-29",
+          "sale_amount": 0.7,
+          "stockout_hours": 5
+        },
+        {
+          "dt": "2024-04-30",
+          "sale_amount": 0.7,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-01",
+          "sale_amount": 0.6,
+          "stockout_hours": 9
+        },
+        {
+          "dt": "2024-05-02",
+          "sale_amount": 0.4,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-03",
+          "sale_amount": 0.4,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-04",
+          "sale_amount": 0.8,
+          "stockout_hours": 4
+        },
+        {
+          "dt": "2024-05-05",
+          "sale_amount": 0.9,
+          "stockout_hours": 6
+        },
+        {
+          "dt": "2024-05-06",
+          "sale_amount": 0.8,
+          "stockout_hours": 5
+        },
+        {
+          "dt": "2024-05-07",
+          "sale_amount": 1.1,
+          "stockout_hours": 1
+        },
+        {
+          "dt": "2024-05-08",
+          "sale_amount": 1.0,
+          "stockout_hours": 5
+        },
+        {
+          "dt": "2024-05-09",
+          "sale_amount": 0.6,
+          "stockout_hours": 6
+        },
+        {
+          "dt": "2024-05-10",
+          "sale_amount": 0.4,
+          "stockout_hours": 3
+        },
+        {
+          "dt": "2024-05-11",
+          "sale_amount": 1.6,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-12",
+          "sale_amount": 1.3,
+          "stockout_hours": 4
+        },
+        {
+          "dt": "2024-05-13",
+          "sale_amount": 0.4,
+          "stockout_hours": 6
+        },
+        {
+          "dt": "2024-05-14",
+          "sale_amount": 0.7,
+          "stockout_hours": 5
+        },
+        {
+          "dt": "2024-05-15",
+          "sale_amount": 0.8,
+          "stockout_hours": 2
+        },
+        {
+          "dt": "2024-05-16",
+          "sale_amount": 0.8,
+          "stockout_hours": 8
+        },
+        {
+          "dt": "2024-05-17",
+          "sale_amount": 0.6,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-18",
+          "sale_amount": 1.3,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-19",
+          "sale_amount": 1.5,
+          "stockout_hours": 5
+        },
+        {
+          "dt": "2024-05-20",
+          "sale_amount": 0.7,
+          "stockout_hours": 13
+        },
+        {
+          "dt": "2024-05-21",
+          "sale_amount": 0.0,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-05-22",
+          "sale_amount": 0.7,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-23",
+          "sale_amount": 0.4,
+          "stockout_hours": 9
+        },
+        {
+          "dt": "2024-05-24",
+          "sale_amount": 0.9,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-25",
+          "sale_amount": 1.7,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-26",
+          "sale_amount": 0.8,
+          "stockout_hours": 7
+        },
+        {
+          "dt": "2024-05-27",
+          "sale_amount": 1.5,
+          "stockout_hours": 5
+        },
+        {
+          "dt": "2024-05-28",
+          "sale_amount": 0.1,
+          "stockout_hours": 14
+        },
+        {
+          "dt": "2024-05-29",
+          "sale_amount": 0.7,
+          "stockout_hours": 10
+        },
+        {
+          "dt": "2024-05-30",
+          "sale_amount": 1.7,
+          "stockout_hours": 3
+        },
+        {
+          "dt": "2024-05-31",
+          "sale_amount": 0.9,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-01",
+          "sale_amount": 0.7,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-02",
+          "sale_amount": 1.1,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-03",
+          "sale_amount": 0.8,
+          "stockout_hours": 7
+        },
+        {
+          "dt": "2024-06-04",
+          "sale_amount": 0.8,
+          "stockout_hours": 7
+        },
+        {
+          "dt": "2024-06-05",
+          "sale_amount": 0.9,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-06",
+          "sale_amount": 0.7,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-07",
+          "sale_amount": 0.3,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-08",
+          "sale_amount": 1.3,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-09",
+          "sale_amount": 0.4,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-10",
+          "sale_amount": 0.9,
+          "stockout_hours": 6
+        },
+        {
+          "dt": "2024-06-11",
+          "sale_amount": 0.7,
+          "stockout_hours": 4
+        },
+        {
+          "dt": "2024-06-12",
+          "sale_amount": 0.6,
+          "stockout_hours": 3
+        },
+        {
+          "dt": "2024-06-13",
+          "sale_amount": 0.5,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-14",
+          "sale_amount": 0.9,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-15",
+          "sale_amount": 0.3,
+          "stockout_hours": 12
+        },
+        {
+          "dt": "2024-06-16",
+          "sale_amount": 0.7,
+          "stockout_hours": 3
+        },
+        {
+          "dt": "2024-06-17",
+          "sale_amount": 1.2,
+          "stockout_hours": 7
+        },
+        {
+          "dt": "2024-06-18",
+          "sale_amount": 0.1,
+          "stockout_hours": 14
+        },
+        {
+          "dt": "2024-06-19",
+          "sale_amount": 1.0,
+          "stockout_hours": 2
+        },
+        {
+          "dt": "2024-06-20",
+          "sale_amount": 0.9,
+          "stockout_hours": 3
+        },
+        {
+          "dt": "2024-06-21",
+          "sale_amount": 0.6,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-22",
+          "sale_amount": 0.7,
+          "stockout_hours": 9
+        },
+        {
+          "dt": "2024-06-23",
+          "sale_amount": 0.7,
+          "stockout_hours": 9
+        },
+        {
+          "dt": "2024-06-24",
+          "sale_amount": 1.2,
+          "stockout_hours": 5
+        },
+        {
+          "dt": "2024-06-25",
+          "sale_amount": 1.1,
+          "stockout_hours": 3
+        },
+        {
+          "dt": "2024-06-26",
+          "sale_amount": 1.1,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-27",
+          "sale_amount": 0.9,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-28",
+          "sale_amount": 0.8,
+          "stockout_hours": 5
+        },
+        {
+          "dt": "2024-06-29",
+          "sale_amount": 0.8,
+          "stockout_hours": 10
+        },
+        {
+          "dt": "2024-06-30",
+          "sale_amount": 1.2,
+          "stockout_hours": 10
+        },
+        {
+          "dt": "2024-07-01",
+          "sale_amount": 0.9,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-07-02",
+          "sale_amount": 0.9,
+          "stockout_hours": 7
+        }
+      ],
+      "evaluation": [
+        {
+          "dt": "2024-06-26",
+          "actual": 1.1,
+          "prediction": 0.7518644483058468,
+          "rolling_prediction": 0.8857142857142859
+        },
+        {
+          "dt": "2024-06-27",
+          "actual": 0.9,
+          "prediction": 0.8158761134529716,
+          "rolling_prediction": 0.9000000000000001
+        },
+        {
+          "dt": "2024-06-28",
+          "actual": 0.8,
+          "prediction": 0.8205378997494085,
+          "rolling_prediction": 0.9000000000000001
+        },
+        {
+          "dt": "2024-06-29",
+          "actual": 0.8,
+          "prediction": 0.9568761472198752,
+          "rolling_prediction": 0.9285714285714286
+        },
+        {
+          "dt": "2024-06-30",
+          "actual": 1.2,
+          "prediction": 0.9150420358501395,
+          "rolling_prediction": 0.9428571428571428
+        },
+        {
+          "dt": "2024-07-01",
+          "actual": 0.9,
+          "prediction": 0.8922245299078265,
+          "rolling_prediction": 1.0142857142857142
+        },
+        {
+          "dt": "2024-07-02",
+          "actual": 0.9,
+          "prediction": 0.8460398604171105,
+          "rolling_prediction": 0.9714285714285716
+        }
+      ],
+      "recomputed_model_prediction": 0.7644317524391468,
+      "math_checks": "PASS"
+    },
+    "funded": {
+      "outlook": {
+        "store_id": 1,
+        "product_id": 300,
+        "as_of_date": "2024-07-02",
+        "forecast_date": "2024-07-03",
+        "predicted_demand": 10.914721970495435,
+        "model_id": "b9789f1a3402d4b0c0721679",
+        "forecast_run_id": "93fb3e65-00ba-4034-9716-bc42dda77790",
+        "generated_at": "2026-09-18 01:43:39.370848+01:00",
+        "input_policy": "commercial=carry_forward;holiday=0;one_day_level_for_inventory",
+        "on_hand_quantity": 82.75,
+        "on_order_quantity": 0.0,
+        "backorder_quantity": 0.0,
+        "inventory_position": 82.75,
+        "days_of_supply": 7.581503241556583,
+        "average_lead_time_days": 11.21,
+        "coverage_gap_days": 3.6284967584434176,
+        "safety_stock": 36.40779181285813,
+        "reorder_point": 158.76182510211197,
+        "raw_order_quantity": 182.86695319326225,
+        "final_recommended_quantity": 144.0,
+        "allocated_quantity": 144.0,
+        "allocated_order_value": 852.48,
+        "capital_constrained": true,
+        "capacity_constrained": false,
+        "shelf_life_constrained": false,
+        "urgency_score": 35.84503324803708,
+        "urgency_band": "MEDIUM",
+        "control_tower_status": "REORDER - FUNDED",
+        "recommended_action": "Proceed with funded replenishment",
+        "funding_status": "FULLY FUNDED",
+        "minimum_order_quantity": 56.84,
+        "case_pack_size": 24.0,
+        "scenario_budget": 300000.0
+      },
+      "history": [
+        {
+          "dt": "2024-03-28",
+          "sale_amount": 5.8,
+          "stockout_hours": 5
+        },
+        {
+          "dt": "2024-03-29",
+          "sale_amount": 4.5,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-03-30",
+          "sale_amount": 6.5,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-03-31",
+          "sale_amount": 6.3,
+          "stockout_hours": 3
+        },
+        {
+          "dt": "2024-04-01",
+          "sale_amount": 4.5,
+          "stockout_hours": 2
+        },
+        {
+          "dt": "2024-04-02",
+          "sale_amount": 5.5,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-03",
+          "sale_amount": 2.6,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-04",
+          "sale_amount": 5.7,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-05",
+          "sale_amount": 4.4,
+          "stockout_hours": 1
+        },
+        {
+          "dt": "2024-04-06",
+          "sale_amount": 0.1,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-04-07",
+          "sale_amount": 4.4,
+          "stockout_hours": 5
+        },
+        {
+          "dt": "2024-04-08",
+          "sale_amount": 3.7,
+          "stockout_hours": 9
+        },
+        {
+          "dt": "2024-04-09",
+          "sale_amount": 6.8,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-10",
+          "sale_amount": 6.7,
+          "stockout_hours": 5
+        },
+        {
+          "dt": "2024-04-11",
+          "sale_amount": 3.8,
+          "stockout_hours": 8
+        },
+        {
+          "dt": "2024-04-12",
+          "sale_amount": 7.4,
+          "stockout_hours": 5
+        },
+        {
+          "dt": "2024-04-13",
+          "sale_amount": 5.3,
+          "stockout_hours": 10
+        },
+        {
+          "dt": "2024-04-14",
+          "sale_amount": 6.9,
+          "stockout_hours": 7
+        },
+        {
+          "dt": "2024-04-15",
+          "sale_amount": 5.6,
+          "stockout_hours": 5
+        },
+        {
+          "dt": "2024-04-16",
+          "sale_amount": 6.4,
+          "stockout_hours": 6
+        },
+        {
+          "dt": "2024-04-17",
+          "sale_amount": 8.6,
+          "stockout_hours": 6
+        },
+        {
+          "dt": "2024-04-18",
+          "sale_amount": 5.6,
+          "stockout_hours": 6
+        },
+        {
+          "dt": "2024-04-19",
+          "sale_amount": 12.4,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-20",
+          "sale_amount": 6.9,
+          "stockout_hours": 2
+        },
+        {
+          "dt": "2024-04-21",
+          "sale_amount": 11.6,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-22",
+          "sale_amount": 5.7,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-23",
+          "sale_amount": 5.3,
+          "stockout_hours": 10
+        },
+        {
+          "dt": "2024-04-24",
+          "sale_amount": 4.9,
+          "stockout_hours": 5
+        },
+        {
+          "dt": "2024-04-25",
+          "sale_amount": 6.6,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-26",
+          "sale_amount": 6.6,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-27",
+          "sale_amount": 7.3,
+          "stockout_hours": 7
+        },
+        {
+          "dt": "2024-04-28",
+          "sale_amount": 5.7,
+          "stockout_hours": 4
+        },
+        {
+          "dt": "2024-04-29",
+          "sale_amount": 5.3,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-30",
+          "sale_amount": 7.3,
+          "stockout_hours": 2
+        },
+        {
+          "dt": "2024-05-01",
+          "sale_amount": 6.5,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-02",
+          "sale_amount": 4.4,
+          "stockout_hours": 4
+        },
+        {
+          "dt": "2024-05-03",
+          "sale_amount": 4.8,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-04",
+          "sale_amount": 6.0,
+          "stockout_hours": 10
+        },
+        {
+          "dt": "2024-05-05",
+          "sale_amount": 10.9,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-06",
+          "sale_amount": 5.3,
+          "stockout_hours": 5
+        },
+        {
+          "dt": "2024-05-07",
+          "sale_amount": 9.2,
+          "stockout_hours": 3
+        },
+        {
+          "dt": "2024-05-08",
+          "sale_amount": 2.9,
+          "stockout_hours": 10
+        },
+        {
+          "dt": "2024-05-09",
+          "sale_amount": 7.2,
+          "stockout_hours": 6
+        },
+        {
+          "dt": "2024-05-10",
+          "sale_amount": 9.9,
+          "stockout_hours": 3
+        },
+        {
+          "dt": "2024-05-11",
+          "sale_amount": 8.9,
+          "stockout_hours": 4
+        },
+        {
+          "dt": "2024-05-12",
+          "sale_amount": 8.6,
+          "stockout_hours": 2
+        },
+        {
+          "dt": "2024-05-13",
+          "sale_amount": 7.5,
+          "stockout_hours": 3
+        },
+        {
+          "dt": "2024-05-14",
+          "sale_amount": 8.2,
+          "stockout_hours": 6
+        },
+        {
+          "dt": "2024-05-15",
+          "sale_amount": 8.1,
+          "stockout_hours": 4
+        },
+        {
+          "dt": "2024-05-16",
+          "sale_amount": 7.9,
+          "stockout_hours": 4
+        },
+        {
+          "dt": "2024-05-17",
+          "sale_amount": 7.6,
+          "stockout_hours": 4
+        },
+        {
+          "dt": "2024-05-18",
+          "sale_amount": 11.0,
+          "stockout_hours": 7
+        },
+        {
+          "dt": "2024-05-19",
+          "sale_amount": 10.1,
+          "stockout_hours": 5
+        },
+        {
+          "dt": "2024-05-20",
+          "sale_amount": 6.9,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-21",
+          "sale_amount": 9.2,
+          "stockout_hours": 5
+        },
+        {
+          "dt": "2024-05-22",
+          "sale_amount": 8.1,
+          "stockout_hours": 4
+        },
+        {
+          "dt": "2024-05-23",
+          "sale_amount": 0.3,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-05-24",
+          "sale_amount": 10.0,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-25",
+          "sale_amount": 13.9,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-26",
+          "sale_amount": 15.8,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-27",
+          "sale_amount": 2.8,
+          "stockout_hours": 8
+        },
+        {
+          "dt": "2024-05-28",
+          "sale_amount": 6.4,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-29",
+          "sale_amount": 5.970000000000001,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-30",
+          "sale_amount": 8.3,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-31",
+          "sale_amount": 5.79,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-01",
+          "sale_amount": 10.7,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-02",
+          "sale_amount": 10.6,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-03",
+          "sale_amount": 10.6,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-04",
+          "sale_amount": 9.4,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-05",
+          "sale_amount": 9.2,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-06",
+          "sale_amount": 6.6,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-07",
+          "sale_amount": 6.4,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-08",
+          "sale_amount": 9.3,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-09",
+          "sale_amount": 8.67,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-10",
+          "sale_amount": 8.26,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-11",
+          "sale_amount": 9.5,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-12",
+          "sale_amount": 5.4,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-13",
+          "sale_amount": 1.9,
+          "stockout_hours": 12
+        },
+        {
+          "dt": "2024-06-14",
+          "sale_amount": 7.2,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-15",
+          "sale_amount": 11.4,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-16",
+          "sale_amount": 11.8,
+          "stockout_hours": 5
+        },
+        {
+          "dt": "2024-06-17",
+          "sale_amount": 10.0,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-18",
+          "sale_amount": 2.2,
+          "stockout_hours": 12
+        },
+        {
+          "dt": "2024-06-19",
+          "sale_amount": 9.5,
+          "stockout_hours": 4
+        },
+        {
+          "dt": "2024-06-20",
+          "sale_amount": 11.7,
+          "stockout_hours": 4
+        },
+        {
+          "dt": "2024-06-21",
+          "sale_amount": 12.5,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-22",
+          "sale_amount": 14.2,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-23",
+          "sale_amount": 14.4,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-24",
+          "sale_amount": 10.4,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-25",
+          "sale_amount": 13.4,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-26",
+          "sale_amount": 11.6,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-27",
+          "sale_amount": 14.7,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-28",
+          "sale_amount": 10.6,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-29",
+          "sale_amount": 11.8,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-30",
+          "sale_amount": 17.5,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-07-01",
+          "sale_amount": 11.0,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-07-02",
+          "sale_amount": 12.1,
+          "stockout_hours": 0
+        }
+      ],
+      "evaluation": [
+        {
+          "dt": "2024-06-26",
+          "actual": 11.6,
+          "prediction": 10.202826059713091,
+          "rolling_prediction": 12.3
+        },
+        {
+          "dt": "2024-06-27",
+          "actual": 14.7,
+          "prediction": 10.31004918212394,
+          "rolling_prediction": 12.599999999999998
+        },
+        {
+          "dt": "2024-06-28",
+          "actual": 10.6,
+          "prediction": 10.613386988797464,
+          "rolling_prediction": 13.028571428571428
+        },
+        {
+          "dt": "2024-06-29",
+          "actual": 11.8,
+          "prediction": 11.61382775369949,
+          "rolling_prediction": 12.757142857142856
+        },
+        {
+          "dt": "2024-06-30",
+          "actual": 17.5,
+          "prediction": 8.562187259700796,
+          "rolling_prediction": 12.414285714285713
+        },
+        {
+          "dt": "2024-07-01",
+          "actual": 11.0,
+          "prediction": 6.865846094284315,
+          "rolling_prediction": 12.857142857142858
+        },
+        {
+          "dt": "2024-07-02",
+          "actual": 12.1,
+          "prediction": 6.086195321323357,
+          "rolling_prediction": 12.942857142857145
+        }
+      ],
+      "recomputed_model_prediction": 10.914721970495435,
+      "math_checks": "PASS"
+    },
+    "unfunded": {
+      "outlook": {
+        "store_id": 1,
+        "product_id": 117,
+        "as_of_date": "2024-07-02",
+        "forecast_date": "2024-07-03",
+        "predicted_demand": 5.640209176684883,
+        "model_id": "b9789f1a3402d4b0c0721679",
+        "forecast_run_id": "93fb3e65-00ba-4034-9716-bc42dda77790",
+        "generated_at": "2026-09-18 01:43:39.370848+01:00",
+        "input_policy": "commercial=carry_forward;holiday=0;one_day_level_for_inventory",
+        "on_hand_quantity": 61.49,
+        "on_order_quantity": 0.0,
+        "backorder_quantity": 10.97,
+        "inventory_position": 50.52,
+        "days_of_supply": 10.902077932531869,
+        "average_lead_time_days": 9.83,
+        "coverage_gap_days": 0.0,
+        "safety_stock": 25.70770205778114,
+        "reorder_point": 81.15095826459354,
+        "raw_order_quantity": 93.63209476816368,
+        "final_recommended_quantity": 60.0,
+        "allocated_quantity": 0.0,
+        "allocated_order_value": 0.0,
+        "capital_constrained": true,
+        "capacity_constrained": false,
+        "shelf_life_constrained": false,
+        "urgency_score": 24.134257790478706,
+        "urgency_band": "LOW",
+        "control_tower_status": "REORDER - UNFUNDED",
+        "recommended_action": "Hold in funding queue and review priority",
+        "funding_status": "UNFUNDED",
+        "minimum_order_quantity": 42.02,
+        "case_pack_size": 12.0,
+        "scenario_budget": 300000.0
+      },
+      "history": [
+        {
+          "dt": "2024-03-28",
+          "sale_amount": 0.1,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-03-29",
+          "sale_amount": 7.0,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-03-30",
+          "sale_amount": 9.7,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-03-31",
+          "sale_amount": 7.2,
+          "stockout_hours": 2
+        },
+        {
+          "dt": "2024-04-01",
+          "sale_amount": 1.1,
+          "stockout_hours": 14
+        },
+        {
+          "dt": "2024-04-02",
+          "sale_amount": 7.3,
+          "stockout_hours": 3
+        },
+        {
+          "dt": "2024-04-03",
+          "sale_amount": 1.2,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-04-04",
+          "sale_amount": 4.1,
+          "stockout_hours": 11
+        },
+        {
+          "dt": "2024-04-05",
+          "sale_amount": 8.3,
+          "stockout_hours": 3
+        },
+        {
+          "dt": "2024-04-06",
+          "sale_amount": 3.3,
+          "stockout_hours": 13
+        },
+        {
+          "dt": "2024-04-07",
+          "sale_amount": 5.5,
+          "stockout_hours": 6
+        },
+        {
+          "dt": "2024-04-08",
+          "sale_amount": 6.0,
+          "stockout_hours": 9
+        },
+        {
+          "dt": "2024-04-09",
+          "sale_amount": 5.2,
+          "stockout_hours": 9
+        },
+        {
+          "dt": "2024-04-10",
+          "sale_amount": 5.2,
+          "stockout_hours": 5
+        },
+        {
+          "dt": "2024-04-11",
+          "sale_amount": 7.9,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-12",
+          "sale_amount": 7.2,
+          "stockout_hours": 7
+        },
+        {
+          "dt": "2024-04-13",
+          "sale_amount": 11.6,
+          "stockout_hours": 4
+        },
+        {
+          "dt": "2024-04-14",
+          "sale_amount": 9.3,
+          "stockout_hours": 9
+        },
+        {
+          "dt": "2024-04-15",
+          "sale_amount": 8.5,
+          "stockout_hours": 1
+        },
+        {
+          "dt": "2024-04-16",
+          "sale_amount": 6.9,
+          "stockout_hours": 5
+        },
+        {
+          "dt": "2024-04-17",
+          "sale_amount": 4.6,
+          "stockout_hours": 9
+        },
+        {
+          "dt": "2024-04-18",
+          "sale_amount": 6.0,
+          "stockout_hours": 7
+        },
+        {
+          "dt": "2024-04-19",
+          "sale_amount": 8.0,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-20",
+          "sale_amount": 10.1,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-21",
+          "sale_amount": 12.0,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-22",
+          "sale_amount": 6.9,
+          "stockout_hours": 2
+        },
+        {
+          "dt": "2024-04-23",
+          "sale_amount": 6.0,
+          "stockout_hours": 8
+        },
+        {
+          "dt": "2024-04-24",
+          "sale_amount": 6.4,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-25",
+          "sale_amount": 9.2,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-26",
+          "sale_amount": 8.0,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-27",
+          "sale_amount": 7.6,
+          "stockout_hours": 5
+        },
+        {
+          "dt": "2024-04-28",
+          "sale_amount": 6.1,
+          "stockout_hours": 8
+        },
+        {
+          "dt": "2024-04-29",
+          "sale_amount": 8.3,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-04-30",
+          "sale_amount": 6.0,
+          "stockout_hours": 5
+        },
+        {
+          "dt": "2024-05-01",
+          "sale_amount": 6.5,
+          "stockout_hours": 4
+        },
+        {
+          "dt": "2024-05-02",
+          "sale_amount": 5.7,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-03",
+          "sale_amount": 6.6,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-04",
+          "sale_amount": 6.3,
+          "stockout_hours": 8
+        },
+        {
+          "dt": "2024-05-05",
+          "sale_amount": 12.5,
+          "stockout_hours": 1
+        },
+        {
+          "dt": "2024-05-06",
+          "sale_amount": 7.6,
+          "stockout_hours": 6
+        },
+        {
+          "dt": "2024-05-07",
+          "sale_amount": 6.2,
+          "stockout_hours": 5
+        },
+        {
+          "dt": "2024-05-08",
+          "sale_amount": 6.7,
+          "stockout_hours": 3
+        },
+        {
+          "dt": "2024-05-09",
+          "sale_amount": 4.2,
+          "stockout_hours": 8
+        },
+        {
+          "dt": "2024-05-10",
+          "sale_amount": 5.6,
+          "stockout_hours": 6
+        },
+        {
+          "dt": "2024-05-11",
+          "sale_amount": 6.8,
+          "stockout_hours": 10
+        },
+        {
+          "dt": "2024-05-12",
+          "sale_amount": 14.7,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-13",
+          "sale_amount": 3.3,
+          "stockout_hours": 9
+        },
+        {
+          "dt": "2024-05-14",
+          "sale_amount": 6.0,
+          "stockout_hours": 5
+        },
+        {
+          "dt": "2024-05-15",
+          "sale_amount": 4.4,
+          "stockout_hours": 5
+        },
+        {
+          "dt": "2024-05-16",
+          "sale_amount": 5.5,
+          "stockout_hours": 3
+        },
+        {
+          "dt": "2024-05-17",
+          "sale_amount": 11.3,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-18",
+          "sale_amount": 9.6,
+          "stockout_hours": 4
+        },
+        {
+          "dt": "2024-05-19",
+          "sale_amount": 10.3,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-20",
+          "sale_amount": 8.0,
+          "stockout_hours": 2
+        },
+        {
+          "dt": "2024-05-21",
+          "sale_amount": 6.0,
+          "stockout_hours": 5
+        },
+        {
+          "dt": "2024-05-22",
+          "sale_amount": 6.6,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-23",
+          "sale_amount": 6.9,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-24",
+          "sale_amount": 1.7,
+          "stockout_hours": 13
+        },
+        {
+          "dt": "2024-05-25",
+          "sale_amount": 9.3,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-26",
+          "sale_amount": 9.8,
+          "stockout_hours": 2
+        },
+        {
+          "dt": "2024-05-27",
+          "sale_amount": 3.7,
+          "stockout_hours": 6
+        },
+        {
+          "dt": "2024-05-28",
+          "sale_amount": 6.7,
+          "stockout_hours": 1
+        },
+        {
+          "dt": "2024-05-29",
+          "sale_amount": 5.5,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-30",
+          "sale_amount": 5.3,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-05-31",
+          "sale_amount": 7.3,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-01",
+          "sale_amount": 5.8,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-02",
+          "sale_amount": 8.1,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-03",
+          "sale_amount": 6.1,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-04",
+          "sale_amount": 5.3,
+          "stockout_hours": 1
+        },
+        {
+          "dt": "2024-06-05",
+          "sale_amount": 6.5,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-06",
+          "sale_amount": 3.6,
+          "stockout_hours": 7
+        },
+        {
+          "dt": "2024-06-07",
+          "sale_amount": 5.1,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-08",
+          "sale_amount": 2.6,
+          "stockout_hours": 11
+        },
+        {
+          "dt": "2024-06-09",
+          "sale_amount": 5.3,
+          "stockout_hours": 7
+        },
+        {
+          "dt": "2024-06-10",
+          "sale_amount": 6.4,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-11",
+          "sale_amount": 6.2,
+          "stockout_hours": 3
+        },
+        {
+          "dt": "2024-06-12",
+          "sale_amount": 2.9,
+          "stockout_hours": 6
+        },
+        {
+          "dt": "2024-06-13",
+          "sale_amount": 4.3,
+          "stockout_hours": 7
+        },
+        {
+          "dt": "2024-06-14",
+          "sale_amount": 0.3,
+          "stockout_hours": 16
+        },
+        {
+          "dt": "2024-06-15",
+          "sale_amount": 7.2,
+          "stockout_hours": 6
+        },
+        {
+          "dt": "2024-06-16",
+          "sale_amount": 9.1,
+          "stockout_hours": 2
+        },
+        {
+          "dt": "2024-06-17",
+          "sale_amount": 6.4,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-18",
+          "sale_amount": 7.8,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-19",
+          "sale_amount": 7.6,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-20",
+          "sale_amount": 6.6,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-21",
+          "sale_amount": 7.8,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-22",
+          "sale_amount": 7.6,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-23",
+          "sale_amount": 9.6,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-24",
+          "sale_amount": 5.8,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-25",
+          "sale_amount": 8.3,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-26",
+          "sale_amount": 7.0,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-27",
+          "sale_amount": 7.8,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-28",
+          "sale_amount": 7.9,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-29",
+          "sale_amount": 6.0,
+          "stockout_hours": 0
+        },
+        {
+          "dt": "2024-06-30",
+          "sale_amount": 8.3,
+          "stockout_hours": 7
+        },
+        {
+          "dt": "2024-07-01",
+          "sale_amount": 3.5,
+          "stockout_hours": 5
+        },
+        {
+          "dt": "2024-07-02",
+          "sale_amount": 6.5,
+          "stockout_hours": 2
+        }
+      ],
+      "evaluation": [
+        {
+          "dt": "2024-06-26",
+          "actual": 7.0,
+          "prediction": 5.704155135347244,
+          "rolling_prediction": 7.614285714285714
+        },
+        {
+          "dt": "2024-06-27",
+          "actual": 7.8,
+          "prediction": 5.639487811364266,
+          "rolling_prediction": 7.528571428571429
+        },
+        {
+          "dt": "2024-06-28",
+          "actual": 7.9,
+          "prediction": 5.996411205395726,
+          "rolling_prediction": 7.7
+        },
+        {
+          "dt": "2024-06-29",
+          "actual": 6.0,
+          "prediction": 7.354778986564811,
+          "rolling_prediction": 7.7142857142857135
+        },
+        {
+          "dt": "2024-06-30",
+          "actual": 8.3,
+          "prediction": 7.055227361295942,
+          "rolling_prediction": 7.485714285714286
+        },
+        {
+          "dt": "2024-07-01",
+          "actual": 3.5,
+          "prediction": 5.654328487626825,
+          "rolling_prediction": 7.300000000000002
+        },
+        {
+          "dt": "2024-07-02",
+          "actual": 6.5,
+          "prediction": 5.194991195900641,
+          "rolling_prediction": 6.971428571428571
+        }
+      ],
+      "recomputed_model_prediction": 5.640209176684883,
+      "math_checks": "PASS"
+    }
+  }
+}

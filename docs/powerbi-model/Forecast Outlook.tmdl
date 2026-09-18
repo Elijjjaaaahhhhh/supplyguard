@@ -1,0 +1,205 @@
+/// Persisted next-day demand and synthetic operational scenario; exact published run.
+table 'Forecast Outlook'
+	lineageTag: 8bfdfb04-9868-45e9-8c45-6620d294de61
+
+	column store_id
+		dataType: int64
+		lineageTag: 8d63616a-b142-43ae-9885-60e92ced56b7
+		summarizeBy: none
+		sourceColumn: store_id
+
+	column product_id
+		dataType: int64
+		lineageTag: bfa6ab6b-f0db-4ffe-a654-fab5a775d2f6
+		summarizeBy: none
+		sourceColumn: product_id
+
+	column as_of_date
+		dataType: dateTime
+		lineageTag: 4563853a-b8b7-4b34-bf57-be77349e2f20
+		summarizeBy: none
+		sourceColumn: as_of_date
+
+	column forecast_date
+		dataType: dateTime
+		lineageTag: be711431-0702-4be7-8362-e7918bb558b7
+		summarizeBy: none
+		sourceColumn: forecast_date
+
+	column generated_at
+		dataType: dateTime
+		lineageTag: a74f5ad9-9bf1-480b-9822-f301b0fd237b
+		summarizeBy: none
+		sourceColumn: generated_at
+
+	column model_id
+		dataType: string
+		lineageTag: b2d48258-9c54-47f7-aec2-8bf733647871
+		summarizeBy: none
+		sourceColumn: model_id
+
+	column forecast_run_id
+		dataType: string
+		lineageTag: cebd8286-66cd-47c8-8375-f09c3e62a4ed
+		summarizeBy: none
+		sourceColumn: forecast_run_id
+
+	column input_policy
+		dataType: string
+		lineageTag: 7caba721-ffa9-47f1-834a-d9a9aca963d4
+		summarizeBy: none
+		sourceColumn: input_policy
+
+	column urgency_band
+		dataType: string
+		lineageTag: a19706be-74e9-4219-b7c7-8391278fb61e
+		summarizeBy: none
+		sourceColumn: urgency_band
+
+	column control_tower_status
+		dataType: string
+		lineageTag: eb29c7e9-fbf1-487e-a839-de9b207042f5
+		summarizeBy: none
+		sourceColumn: control_tower_status
+
+	column recommended_action
+		dataType: string
+		lineageTag: a36d87e7-27a8-4f3e-bb91-1e4e614c3334
+		summarizeBy: none
+		sourceColumn: recommended_action
+
+	column funding_status
+		dataType: string
+		lineageTag: 1faa4eb1-f2be-4457-b682-aefdd49b4c8a
+		summarizeBy: none
+		sourceColumn: funding_status
+
+	column capital_constrained
+		dataType: boolean
+		lineageTag: ff920878-bbae-4543-9432-48398060bfcf
+		summarizeBy: none
+		sourceColumn: capital_constrained
+
+	column capacity_constrained
+		dataType: boolean
+		lineageTag: d71c8485-2d69-41e3-8ce0-0069a8d9bfce
+		summarizeBy: none
+		sourceColumn: capacity_constrained
+
+	column shelf_life_constrained
+		dataType: boolean
+		lineageTag: e1606a5e-7a6c-4e60-9fa7-3701ef4f40f7
+		summarizeBy: none
+		sourceColumn: shelf_life_constrained
+
+	column predicted_demand
+		dataType: double
+		lineageTag: bf3c5c38-bf39-4dab-bb88-a4211c161ad1
+		summarizeBy: none
+		sourceColumn: predicted_demand
+
+	column on_hand_quantity
+		dataType: double
+		lineageTag: 4a397ac4-df25-43e3-84ce-9a2b36e42830
+		summarizeBy: none
+		sourceColumn: on_hand_quantity
+
+	column on_order_quantity
+		dataType: double
+		lineageTag: dd605e81-1649-4d51-a5e3-94397e3f99f3
+		summarizeBy: none
+		sourceColumn: on_order_quantity
+
+	column backorder_quantity
+		dataType: double
+		lineageTag: 5dee5937-bb3a-4bda-b6aa-025662d50397
+		summarizeBy: none
+		sourceColumn: backorder_quantity
+
+	column inventory_position
+		dataType: double
+		lineageTag: d620c860-3f87-4544-84f7-2dd27c9bfc26
+		summarizeBy: none
+		sourceColumn: inventory_position
+
+	column days_of_supply
+		dataType: double
+		lineageTag: 59130963-7e4e-493c-9b76-9a1a2f661ef5
+		summarizeBy: none
+		sourceColumn: days_of_supply
+
+	column average_lead_time_days
+		dataType: double
+		lineageTag: 53e87c33-f4d7-4ca5-b6b1-38c064861cc5
+		summarizeBy: none
+		sourceColumn: average_lead_time_days
+
+	column coverage_gap_days
+		dataType: double
+		lineageTag: 59f660a0-be5f-4ceb-b2f6-7100206652d2
+		summarizeBy: none
+		sourceColumn: coverage_gap_days
+
+	column safety_stock
+		dataType: double
+		lineageTag: 31787e64-f648-4ac2-b2c0-00aab90346f5
+		summarizeBy: none
+		sourceColumn: safety_stock
+
+	column reorder_point
+		dataType: double
+		lineageTag: 1ca208d0-a813-46c4-bce8-59dda0a7e46a
+		summarizeBy: none
+		sourceColumn: reorder_point
+
+	column raw_order_quantity
+		dataType: double
+		lineageTag: f03102a9-471d-425e-a1b2-5c0a9170f072
+		summarizeBy: none
+		sourceColumn: raw_order_quantity
+
+	column final_recommended_quantity
+		dataType: double
+		lineageTag: 70d54bf2-6e67-4ff4-bf71-1d5757cb8610
+		summarizeBy: none
+		sourceColumn: final_recommended_quantity
+
+	column allocated_quantity
+		dataType: double
+		lineageTag: 3920df1f-f6c4-447f-a48e-50503bbf25d8
+		summarizeBy: none
+		sourceColumn: allocated_quantity
+
+	column allocated_order_value
+		dataType: double
+		lineageTag: e1e9b37d-771d-4931-8790-6d8ca3f6a61d
+		summarizeBy: none
+		sourceColumn: allocated_order_value
+
+	column urgency_score
+		dataType: double
+		lineageTag: 0ef3708b-23e5-4cd8-b242-fe162abfdfbb
+		summarizeBy: none
+		sourceColumn: urgency_score
+
+	column minimum_order_quantity
+		dataType: double
+		lineageTag: 6c1b4d2d-3a06-415e-bab8-767fe53daaca
+		summarizeBy: none
+		sourceColumn: minimum_order_quantity
+
+	column case_pack_size
+		dataType: double
+		lineageTag: 55340a85-e789-4fae-a9cb-362be353189b
+		summarizeBy: none
+		sourceColumn: case_pack_size
+
+	column scenario_budget
+		dataType: double
+		lineageTag: 806a1321-0e8c-4519-9d44-d83d563228a5
+		summarizeBy: none
+		sourceColumn: scenario_budget
+
+	partition 'Forecast Outlook' = m
+		mode: import
+		source = let Source = PostgreSQL.Database("localhost:5432", "supplyguard"), View = Source{[Schema="mart", Item="bi_forecast_outlook"]}[Data] in View

@@ -1,0 +1,596 @@
+table _Measures
+	lineageTag: 7384c79e-6200-4778-8956-a42474987bd3
+
+	measure 'Total Series' = COALESCE(COUNTROWS('Control Tower'),0)
+		formatString: #,0
+		lineageTag: d2206d4c-7997-4ebe-9d0b-d8a2912dcaa1
+
+	measure 'Reorder Required' = COALESCE(CALCULATE(COUNTROWS('Control Tower'),KEEPFILTERS('Control Tower'[reorder_required]=TRUE())),0)
+		formatString: 0
+		lineageTag: b103d827-e6d8-4854-bf85-f88680a7d144
+
+	measure 'Reorder Rate' =
+
+			DIVIDE(
+			    [Reorder Required],
+			    [Total Series],
+			    0
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 93855992-1346-4ded-bff3-ef56620d2738
+
+	measure 'Healthy Series' = COALESCE(CALCULATE(COUNTROWS('Control Tower'),KEEPFILTERS('Control Tower'[control_tower_status]="HEALTHY")),0)
+		formatString: 0
+		lineageTag: 81c56e58-5f95-4208-9f3b-cf9f6bbe0fb1
+
+	measure 'Watch Series' = COALESCE(CALCULATE(COUNTROWS('Control Tower'),KEEPFILTERS('Control Tower'[control_tower_status]="WATCH")),0)
+		formatString: 0
+		lineageTag: 95ff1008-cb90-4666-aaf8-06e767b5c416
+
+	measure 'Critical Cases' = COALESCE(CALCULATE(COUNTROWS('Control Tower'),KEEPFILTERS(LEFT('Control Tower'[control_tower_status],8)="CRITICAL")),0)
+		formatString: 0
+		lineageTag: 0d28c811-68c7-42c7-b10e-5de2f222fafb
+
+	measure 'Funded Orders' = COALESCE(CALCULATE(COUNTROWS('Control Tower'),KEEPFILTERS('Control Tower'[allocated_quantity]>0)),0)
+		formatString: 0
+		lineageTag: 6e4b2876-c848-4622-b649-08aeacb6fec1
+
+	measure 'Unfunded Reorders' = COALESCE(CALCULATE(COUNTROWS('Control Tower'),KEEPFILTERS('Control Tower'[reorder_required]=TRUE()),KEEPFILTERS('Control Tower'[allocated_quantity]=0)),0)
+		formatString: 0
+		lineageTag: d252b835-353c-4ecb-baff-4751fd84d7ab
+
+	/// Synthetic scenario currency units; not retailer expenditure or a real currency.
+	measure 'Allocated Capital' =
+
+			SUM(
+			    'Control Tower'[allocated_order_value]
+			)
+		formatString: #,0.00
+		lineageTag: a2acbfd8-29a9-4a98-bff3-0e0d02c657a0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Synthetic scenario currency units; not retailer expenditure or a real currency.
+	measure 'Scenario Budget' = CALCULATE(MAX('Forecast Outlook'[scenario_budget]),REMOVEFILTERS())
+		formatString: #,0.00
+		lineageTag: 75b8b72e-2c08-4915-b706-fcca93c38224
+
+	/// Synthetic scenario currency units; not retailer expenditure or a real currency.
+	measure 'Unused Budget' =
+
+			[Scenario Budget]
+			-
+			[Allocated Capital]
+		formatString: #,0.00
+		lineageTag: 450b4ce1-af5c-45d6-abb0-34ff2e908eb9
+
+	measure 'Budget Utilisation' =
+
+			DIVIDE(
+			    [Allocated Capital],
+			    [Scenario Budget],
+			    0
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 8427f31d-005e-4aed-bed8-6b38e0b7db8b
+
+	measure 'Avg Days of Supply' =
+
+			AVERAGE(
+			    'Control Tower'[days_of_supply]
+			)
+		lineageTag: a6d492b0-74ee-43b6-bead-57032f42996e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg Coverage Gap' =
+
+			AVERAGE(
+			    'Control Tower'[coverage_gap_days]
+			)
+		lineageTag: b5d3cfef-f1b2-4203-a429-0a1728937a4d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Coverage Gap Series' =
+
+			CALCULATE(
+			    COUNTROWS(
+			        'Control Tower'
+			    ),
+			    'Control Tower'[coverage_gap_days] > 0
+			)
+		formatString: 0
+		lineageTag: ebb781c9-d6a5-43d7-aa37-eb7e3da7a0c5
+
+	measure 'Avg Lead Time' =
+
+			AVERAGE(
+			    'Control Tower'[average_lead_time_days]
+			)
+		lineageTag: 9194b07c-8437-4676-b8cf-fb36caa43ab5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Raw Requirement' =
+
+			SUM(
+			    'Control Tower'[raw_order_quantity]
+			)
+		formatString: #,0.00
+		lineageTag: a4d516e9-9183-44ce-bc85-8c06f619ab01
+
+	measure 'Total Feasible Quantity' =
+
+			SUM(
+			    'Control Tower'[final_recommended_quantity]
+			)
+		formatString: #,0
+		lineageTag: 898ea033-0082-4d94-83bc-2d69aac16cfb
+
+	measure 'Total Allocated Quantity' =
+
+			SUM(
+			    'Control Tower'[allocated_quantity]
+			)
+		formatString: #,0
+		lineageTag: 9613e807-c3bf-4fca-88e0-3e427b45c750
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Unmet Quantity' =
+
+			SUMX(
+			    'Control Tower',
+			    MAX(
+			        'Control Tower'[raw_order_quantity]
+			        -
+			        'Control Tower'[allocated_quantity],
+			        0
+			    )
+			)
+		lineageTag: e402b623-0af0-420d-8c5c-d890ed763c87
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Capital Constrained' =
+
+			CALCULATE(
+			    COUNTROWS(
+			        'Control Tower'
+			    ),
+			    'Control Tower'[capital_constrained] = TRUE()
+			)
+		formatString: 0
+		lineageTag: 3ffef731-7bb3-45d3-809d-088cb6f17141
+
+	measure 'Capacity Constrained' =
+
+			CALCULATE(
+			    COUNTROWS(
+			        'Control Tower'
+			    ),
+			    'Control Tower'[capacity_constrained] = TRUE()
+			)
+		formatString: 0
+		lineageTag: bdb86028-aec1-48df-89b2-b452559826b0
+
+	measure 'Shelf-Life Constrained' =
+
+			CALCULATE(
+			    COUNTROWS(
+			        'Control Tower'
+			    ),
+			    'Control Tower'[shelf_life_constrained] = TRUE()
+			)
+		formatString: 0
+		lineageTag: db5e39d3-5ed4-4951-9657-da4fee9743ad
+
+	measure 'Avg Urgency Score' =
+
+			AVERAGE(
+			    'Control Tower'[urgency_score]
+			)
+		lineageTag: f9b379e1-3b81-4b2d-9990-0726d7ce9096
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'High or Critical Reorders' =
+
+			CALCULATE(
+			    COUNTROWS(
+			        'Control Tower'
+			    ),
+			    FILTER(
+			        'Control Tower',
+			        'Control Tower'[urgency_band]
+			            IN {
+			                "HIGH",
+			                "CRITICAL"
+			            }
+			    )
+			)
+		formatString: 0
+		lineageTag: 8c30804b-c801-4c67-abda-72061fb54467
+
+	measure 'Total Series Display' =
+
+			FORMAT(
+			    [Total Series],
+			    "#,##0"
+			)
+		lineageTag: 0a5c27c3-479e-4a56-aa83-6ad4e7bfa4ed
+
+	measure 'Reorder Required Display' =
+
+			FORMAT(
+			    [Reorder Required],
+			    "#,##0"
+			)
+		lineageTag: c46c5226-c18c-4103-81b7-3a679e251551
+
+	measure 'Allocated Capital Display' =
+
+			FORMAT(
+			    [Allocated Capital],
+			    "#,##0.00"
+			)
+		lineageTag: ed2f6ffe-6806-445f-835c-92973538e313
+
+	measure 'Total Raw Requirement Display' =
+
+			FORMAT(
+			    [Total Raw Requirement],
+			    "#,##0.00"
+			)
+		lineageTag: c9e84e0a-e0c9-4df7-aa3b-7b5a5ff36042
+
+	measure 'Constraint Count' =
+
+			SWITCH(
+			    SELECTEDVALUE(
+			        'Constraint Type'[Constraint]
+			    ),
+			    "Capital", [Capital Constrained],
+			    "Capacity", [Capacity Constrained],
+			    "Shelf Life", [Shelf-Life Constrained],
+			    BLANK()
+			)
+		formatString: 0
+		lineageTag: 1e9e638c-eadf-44a9-8e95-5f35f7cb4e4e
+
+	/// Series requiring an operational action; includes funded orders awaiting execution.
+	measure 'Action Required' = COALESCE(CALCULATE(COUNTROWS('Control Tower'), KEEPFILTERS(NOT 'Control Tower'[control_tower_status] IN {"HEALTHY","WATCH"})),0)
+		formatString: #,0
+		displayFolder: 01 Executive
+		lineageTag: a0ce68b4-353e-41e4-92cd-b7750a6e7882
+
+	/// Synthetic scenario currency units; not retailer expenditure or a real currency.
+	measure 'Shared Allocated Capital' = CALCULATE([Allocated Capital], REMOVEFILTERS())
+		formatString: #,0.00
+		displayFolder: 04 Capital
+		lineageTag: 36749b84-c772-43e1-a2b5-599b12c3130b
+
+	/// Synthetic scenario currency units; not retailer expenditure or a real currency.
+	measure 'Shared Budget Remaining' = [Scenario Budget] - [Shared Allocated Capital]
+		formatString: #,0.00
+		displayFolder: 04 Capital
+		lineageTag: b179c7b3-1737-4aa7-a9cf-48c97bb81aeb
+
+	/// Full-scenario allocation as a share of the shared budget.
+	measure 'Shared Budget Utilisation' = DIVIDE([Shared Allocated Capital],[Scenario Budget])
+		formatString: 0.00%
+		displayFolder: 04 Capital
+		lineageTag: f536da74-8430-49cc-a9e5-33422abab0d7
+
+	/// Selected allocation divided by the full shared budget.
+	measure 'Selection Budget Share' = DIVIDE([Allocated Capital],[Scenario Budget])
+		formatString: 0.00%
+		displayFolder: 04 Capital
+		lineageTag: 767afe2a-fe46-4fc8-95e8-38e3cc65e94d
+
+	/// Procurement-feasible quantity still unfunded. Distinct from raw unmet need.
+	measure 'Feasible Unfunded Quantity' = SUMX('Control Tower',MAX('Control Tower'[final_recommended_quantity]-'Control Tower'[allocated_quantity],0))
+		formatString: #,0
+		displayFolder: 03 Replenishment
+		lineageTag: afeaf232-0f26-4847-b8c5-7d33fc66200a
+
+	/// Raw need reduced by constraints; calculated per row to avoid netting rounding increases.
+	measure 'Constraint Shortfall Quantity' = SUMX('Control Tower',MAX('Control Tower'[raw_order_quantity]-'Control Tower'[final_recommended_quantity],0))
+		formatString: #,0.00
+		displayFolder: 03 Replenishment
+		lineageTag: b186d76d-f1d8-4e67-a381-ba31b3ba6fb3
+
+	/// Synthetic scenario on-hand quantity.
+	measure 'On Hand Quantity' = SUM('Control Tower'[on_hand_quantity])
+		formatString: #,0.0
+		displayFolder: 02 Inventory
+		lineageTag: 67524c28-0872-46ca-be09-01d98bbd24d9
+
+	/// Synthetic scenario on-order quantity.
+	measure 'On Order Quantity' = SUM('Control Tower'[on_order_quantity])
+		formatString: #,0.0
+		displayFolder: 02 Inventory
+		lineageTag: 4193a3c1-37dc-4d83-a359-53b0997b6d9d
+
+	/// Synthetic on hand plus on order less backorders.
+	measure 'Inventory Position' = SUM('Control Tower'[inventory_position])
+		formatString: #,0.0
+		displayFolder: 02 Inventory
+		lineageTag: 6ae66d39-818c-4b9d-b364-fbe2662336ae
+
+	/// Persisted operational next-day V3C demand with a 0.01 inventory calculation floor; constant-level extrapolation for planning.
+	measure 'Expected Daily Demand' = SUM('Control Tower'[expected_daily_demand])
+		formatString: #,0.00
+		displayFolder: 02 Inventory
+		lineageTag: b37fd403-0c89-4d5a-8182-2c6b59ec97e1
+
+	/// Scenario safety stock.
+	measure 'Safety Stock' = SUM('Control Tower'[safety_stock])
+		formatString: #,0.0
+		displayFolder: 02 Inventory
+		lineageTag: 3d501934-a946-400c-ab2e-62eca3d56cb4
+
+	/// Scenario reorder point.
+	measure 'Reorder Point' = SUM('Control Tower'[reorder_point])
+		formatString: #,0.0
+		displayFolder: 02 Inventory
+		lineageTag: deb7e36b-70f4-41db-892f-3a1eb8842413
+
+	/// Historical scenario decision date; not today's live stock.
+	measure 'Decision Date' = MAX('Control Tower'[decision_date])
+		formatString: dd MMM yyyy
+		displayFolder: 01 Executive
+		lineageTag: 0e078896-130d-4f52-86a2-20595fc07f29
+
+	/// Detail-selection guidance.
+	measure 'Selected Series' = IF(HASONEVALUE(Store[store_id]) && HASONEVALUE(Product[product_id]), "S" & SELECTEDVALUE(Store[store_id]) & " / SKU " & SELECTEDVALUE(Product[product_id]), "Choose filters above")
+		displayFolder: 05 Detail
+		lineageTag: 9c239d3f-e6a4-40d0-8d7b-8cb6a79e70ae
+
+	/// Exact source action for one scenario series.
+	measure 'Selected Action' = IF(COUNTROWS('Control Tower')=1,SELECTEDVALUE('Control Tower'[recommended_action]),"Select a single store-product pair to inspect its recommendation.")
+		displayFolder: 05 Detail
+		lineageTag: 003fe740-47c1-401a-ba01-e5a4e4bc2b46
+
+	/// Reorders with no feasible quantity.
+	measure 'Zero Feasible Reorders' = COALESCE(CALCULATE(COUNTROWS('Control Tower'),KEEPFILTERS('Control Tower'[reorder_required]=TRUE()),KEEPFILTERS('Control Tower'[final_recommended_quantity]=0)),0)
+		formatString: #,0
+		displayFolder: 03 Replenishment
+		lineageTag: 31ed42dc-c895-4c17-a918-2ff90fd73608
+
+	/// Share of reorder series receiving a positive allocation.
+	measure 'Funded Reorder Rate' = DIVIDE([Funded Orders],[Reorder Required])
+		formatString: 0.0%
+		displayFolder: 04 Capital
+		lineageTag: 842d38b6-89b0-4db3-903c-e22106d5bbc9
+
+	/// Visual filter for action rows.
+	measure 'Priority Row Visible' = IF(COUNTROWS(FILTER('Control Tower',NOT 'Control Tower'[control_tower_status] IN {"HEALTHY","WATCH"}))>0,1,0)
+		formatString: 0
+		displayFolder: 06 QA
+		lineageTag: 6f268e5d-c1ed-4430-a846-f66623f46aa8
+
+	/// Suppress dimension combinations absent from this scenario.
+	measure 'Detail Row Visible' = IF(COUNTROWS('Control Tower')>0,1,0)
+		formatString: 0
+		displayFolder: 06 QA
+		lineageTag: c4aab860-c8d4-4785-a628-9622b43dd52d
+
+	measure 'Observed Sales' = SUM('Demand History'[sale_amount])
+		formatString: #,0.00
+		displayFolder: 07 Forecast
+		lineageTag: 926712c3-2e9f-4184-b57f-6eca0285a751
+
+	measure 'Forecast Rows' = COUNTROWS('Forecast Evaluation')
+		formatString: #,0
+		displayFolder: 07 Forecast
+		lineageTag: 0dbb4deb-e1ba-4d86-9080-9799e0b45d94
+
+	measure 'V3C MAE' = AVERAGEX('Forecast Evaluation',ABS('Forecast Evaluation'[actual]-'Forecast Evaluation'[prediction]))
+		formatString: 0.0000
+		displayFolder: 07 Forecast
+		lineageTag: 4273d786-ece6-4945-831d-2704b5fe138f
+
+	measure 'Baseline MAE' = AVERAGEX('Forecast Evaluation',ABS('Forecast Evaluation'[actual]-'Forecast Evaluation'[rolling_prediction]))
+		formatString: 0.0000
+		displayFolder: 07 Forecast
+		lineageTag: 509223dd-7202-47b3-b6d2-646caddaf466
+
+	measure 'V3C RMSE' = SQRT(AVERAGEX('Forecast Evaluation',POWER('Forecast Evaluation'[actual]-'Forecast Evaluation'[prediction],2)))
+		formatString: 0.0000
+		displayFolder: 07 Forecast
+		lineageTag: 10937664-4f72-4a61-b827-baa0adbbe50c
+
+	measure 'Baseline RMSE' = SQRT(AVERAGEX('Forecast Evaluation',POWER('Forecast Evaluation'[actual]-'Forecast Evaluation'[rolling_prediction],2)))
+		formatString: 0.0000
+		displayFolder: 07 Forecast
+		lineageTag: b89b83b4-488d-42dd-8b9b-057c62a64c69
+
+	measure 'V3C WAPE' = DIVIDE(SUMX('Forecast Evaluation',ABS('Forecast Evaluation'[actual]-'Forecast Evaluation'[prediction])),SUM('Forecast Evaluation'[actual]))
+		formatString: 0.00%
+		displayFolder: 07 Forecast
+		lineageTag: 59bb1c81-4e41-437f-bd32-df11a80a50fa
+
+	measure 'Baseline WAPE' = DIVIDE(SUMX('Forecast Evaluation',ABS('Forecast Evaluation'[actual]-'Forecast Evaluation'[rolling_prediction])),SUM('Forecast Evaluation'[actual]))
+		formatString: 0.00%
+		displayFolder: 07 Forecast
+		lineageTag: a04ffc81-bab1-40ae-a111-b8733ea1173f
+
+	measure 'MAE Improvement' = DIVIDE([Baseline MAE]-[V3C MAE],[Baseline MAE])
+		formatString: 0.0%
+		displayFolder: 07 Forecast
+		lineageTag: a98862a9-e5f0-43da-b9ea-3a2ba4d7545c
+
+	measure 'V3C Daily MAE' = [V3C MAE]
+		formatString: 0.0000
+		displayFolder: 07 Forecast
+		lineageTag: 17fe22a3-3845-4d82-95f7-0db8bef54879
+
+	measure 'Baseline Daily MAE' = [Baseline MAE]
+		formatString: 0.0000
+		displayFolder: 07 Forecast
+		lineageTag: 47f135a5-9fab-4214-8d05-41420e8eaeaf
+
+	measure 'Holdout Actual' = SUM('Forecast Evaluation'[actual])
+		formatString: #,0.00
+		displayFolder: 07 Forecast
+		lineageTag: 944fe54b-1530-4167-aad3-374a7a3ddf3a
+
+	measure 'Holdout Prediction' = SUM('Forecast Evaluation'[prediction])
+		formatString: #,0.00
+		displayFolder: 07 Forecast
+		lineageTag: 191ae48f-cfc5-41cd-938e-48e52f03a413
+
+	measure 'Detail Inventory Position' = IF(HASONEVALUE(Store[store_id]) && HASONEVALUE(Product[product_id]) && COUNTROWS('Control Tower')=1,[Inventory Position],BLANK())
+		formatString: #,0.00
+		displayFolder: 05 Detail
+		lineageTag: 7a6a8340-812c-4f30-9f2b-739ed0197faf
+
+	measure 'Detail Reorder Point' = IF(HASONEVALUE(Store[store_id]) && HASONEVALUE(Product[product_id]) && COUNTROWS('Control Tower')=1,[Reorder Point],BLANK())
+		formatString: #,0.00
+		displayFolder: 05 Detail
+		lineageTag: 891b3ebe-7f17-4f5f-afe2-d3d78137700f
+
+	measure 'Detail Total Feasible Quantity' = IF(HASONEVALUE(Store[store_id]) && HASONEVALUE(Product[product_id]) && COUNTROWS('Control Tower')=1,[Total Feasible Quantity],BLANK())
+		formatString: #,0.00
+		displayFolder: 05 Detail
+		lineageTag: 1d4aa302-e3d4-471d-895d-beb7510f3d51
+
+	measure 'Detail Total Allocated Quantity' = IF(HASONEVALUE(Store[store_id]) && HASONEVALUE(Product[product_id]) && COUNTROWS('Control Tower')=1,[Total Allocated Quantity],BLANK())
+		formatString: #,0.00
+		displayFolder: 05 Detail
+		lineageTag: 93f2a3c6-52bb-4ef0-88a2-c43d7eaf39a5
+
+	measure 'Detail Observed Sales' = IF(HASONEVALUE(Store[store_id]) && HASONEVALUE(Product[product_id]) && COUNTROWS('Control Tower')=1,[Observed Sales],BLANK())
+		formatString: #,0.00
+		displayFolder: 05 Detail
+		lineageTag: 96578d89-3d05-44ac-9a0c-862bf68e8421
+
+	measure 'Chart Series' = COUNTROWS('Control Tower')
+		formatString: #,0
+		lineageTag: 153f7050-c816-4ceb-a58f-1210e8847975
+
+	/// Visual-only availability filter for operational slicers. Preserves broader dimensions while showing only members with matching scenario rows.
+	measure 'Scenario Member Available' = IF(COUNTROWS('Control Tower') > 0, 1, BLANK())
+		formatString: 0
+		lineageTag: 5770f5c8-2b9f-451c-8748-4f11f7b720d9
+
+	measure 'Next-day Demand' = IF(COUNTROWS('Forecast Outlook')=1,MAX('Forecast Outlook'[predicted_demand]))
+		formatString: #,0.00
+		displayFolder: 08 Outlook
+		lineageTag: 8126a906-ac82-4bf3-ac70-9dcebacb598a
+
+	measure 'Outlook On Hand' = IF(COUNTROWS('Forecast Outlook')=1,MAX('Forecast Outlook'[on_hand_quantity]))
+		formatString: #,0.00
+		displayFolder: 08 Outlook
+		lineageTag: 4bbd2e33-598c-4470-905a-1b3f65c320f3
+
+	measure 'Outlook On Order' = IF(COUNTROWS('Forecast Outlook')=1,MAX('Forecast Outlook'[on_order_quantity]))
+		formatString: #,0.00
+		displayFolder: 08 Outlook
+		lineageTag: 958af8d3-9c45-4d49-87f8-39454a435a93
+
+	measure 'Outlook Backorders' = IF(COUNTROWS('Forecast Outlook')=1,MAX('Forecast Outlook'[backorder_quantity]))
+		formatString: #,0.00
+		displayFolder: 08 Outlook
+		lineageTag: b8ae93b8-72a1-4d6f-8494-6a87e7404121
+
+	measure 'Outlook Inventory Position' = IF(COUNTROWS('Forecast Outlook')=1,MAX('Forecast Outlook'[inventory_position]))
+		formatString: #,0.00
+		displayFolder: 08 Outlook
+		lineageTag: 5b260988-346d-473e-8632-a99a384408b2
+
+	measure 'Outlook Days of Supply' = IF(COUNTROWS('Forecast Outlook')=1,MAX('Forecast Outlook'[days_of_supply]))
+		formatString: #,0.00
+		displayFolder: 08 Outlook
+		lineageTag: 8451e555-87d4-4cbe-b5c7-8552c2ff3370
+
+	measure 'Outlook Lead Time' = IF(COUNTROWS('Forecast Outlook')=1,MAX('Forecast Outlook'[average_lead_time_days]))
+		formatString: #,0.00
+		displayFolder: 08 Outlook
+		lineageTag: c771da83-ee8a-43ba-ba5b-2a4a16978398
+
+	measure 'Outlook Coverage Gap' = IF(COUNTROWS('Forecast Outlook')=1,MAX('Forecast Outlook'[coverage_gap_days]))
+		formatString: #,0.00
+		displayFolder: 08 Outlook
+		lineageTag: 277bfd91-b9f9-4743-a20a-5b6ea64d7203
+
+	measure 'Outlook Safety Stock' = IF(COUNTROWS('Forecast Outlook')=1,MAX('Forecast Outlook'[safety_stock]))
+		formatString: #,0.00
+		displayFolder: 08 Outlook
+		lineageTag: d0f0a586-fa68-4d04-a151-c02ee0df42c3
+
+	measure 'Outlook Reorder Point' = IF(COUNTROWS('Forecast Outlook')=1,MAX('Forecast Outlook'[reorder_point]))
+		formatString: #,0.00
+		displayFolder: 08 Outlook
+		lineageTag: 77555021-1741-4654-89c1-2309a56efae8
+
+	measure 'Outlook Raw Requirement' = IF(COUNTROWS('Forecast Outlook')=1,MAX('Forecast Outlook'[raw_order_quantity]))
+		formatString: #,0.00
+		displayFolder: 08 Outlook
+		lineageTag: a7fc2db0-43bb-4e3d-9533-5efb8da92e3d
+
+	measure 'Outlook Feasible Quantity' = IF(COUNTROWS('Forecast Outlook')=1,MAX('Forecast Outlook'[final_recommended_quantity]))
+		formatString: #,0.00
+		displayFolder: 08 Outlook
+		lineageTag: 3b219b2f-66dc-41bb-b1d1-0a9504f46046
+
+	measure 'Outlook Funded Quantity' = IF(COUNTROWS('Forecast Outlook')=1,MAX('Forecast Outlook'[allocated_quantity]))
+		formatString: #,0.00
+		displayFolder: 08 Outlook
+		lineageTag: 2b65452f-a80a-4266-a39b-f61573c88b59
+
+	measure 'Outlook Urgency' = IF(COUNTROWS('Forecast Outlook')=1,IF(ISBLANK(MAX('Forecast Outlook'[urgency_score])),"Not ranked",FORMAT(MAX('Forecast Outlook'[urgency_score]),"0.00")))
+		displayFolder: 08 Outlook
+		lineageTag: d4eac38a-7186-4d23-9e98-365766b3157b
+
+	measure 'Outlook Forecast Date' = IF(COUNTROWS('Forecast Outlook')=1,FORMAT(MAX('Forecast Outlook'[forecast_date]),"dd mmm yyyy"),"Select one scenario store / product")
+		displayFolder: 08 Outlook
+		lineageTag: a56ae53c-9588-49a5-9b8c-d3b7ca53feaf
+
+	measure 'Outlook Status' = IF(COUNTROWS('Forecast Outlook')=1,SELECTEDVALUE('Forecast Outlook'[control_tower_status]),"Select one scenario store / product")
+		displayFolder: 08 Outlook
+		lineageTag: 4fc6085b-5ba0-45ad-986c-678a1b2b8d2e
+
+	measure 'Outlook Action' = IF(COUNTROWS('Forecast Outlook')=1,SELECTEDVALUE('Forecast Outlook'[recommended_action]),"Choose a store and product to trace the decision.")
+		displayFolder: 08 Outlook
+		lineageTag: bf0eca8c-d994-4e49-aa05-fdd2c01ccfe3
+
+	measure 'Outlook Constraints' = IF(COUNTROWS('Forecast Outlook')=1,"Capital: " & IF(SELECTEDVALUE('Forecast Outlook'[capital_constrained]),"binding","clear") & " | Capacity: " & IF(SELECTEDVALUE('Forecast Outlook'[capacity_constrained]),"binding","clear") & " | Shelf life: " & IF(SELECTEDVALUE('Forecast Outlook'[shelf_life_constrained]),"binding","clear") & " | MOQ " & FORMAT(MAX('Forecast Outlook'[minimum_order_quantity]),"0.00") & " | Pack " & FORMAT(MAX('Forecast Outlook'[case_pack_size]),"0"))
+		displayFolder: 08 Outlook
+		lineageTag: 045a3c8d-8682-4d10-aac2-9a1044df67dd
+
+	column Column1
+		dataType: string
+		isHidden
+		lineageTag: 176bf631-a7bc-4222-a37e-aaf09ff1443d
+		summarizeBy: none
+		sourceColumn: Column1
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'UnFunded Reorders Display' =
+
+			FORMAT(
+			    [Unfunded Reorders],
+			    "#,##0"
+			)
+		lineageTag: 1afe3a9c-4509-4317-84e4-abf95e191bed
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Measures = m
+		mode: import
+		source =
+				let
+				  Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t])
+				in
+				  Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table

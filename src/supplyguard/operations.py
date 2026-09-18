@@ -187,6 +187,8 @@ def publish(connection,settings,as_of,run_id,model_id,regenerate=False):
             SELECT r.run_id,r.as_of_date,r.model_id,r.started_at,r.finished_at,r.status,
             r.summary, r.config->>'budget' AS scenario_budget FROM ops.pipeline_run r
             WHERE r.status='success' ORDER BY r.finished_at DESC LIMIT 1''')
+        from .bi import publish_bi
+        publish_bi(connection)
         summary=check_publication(connection,settings,run_id)
         summary['scenario_action']=scenario_action
         from psycopg.types.json import Jsonb

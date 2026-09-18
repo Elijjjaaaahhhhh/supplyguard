@@ -1,0 +1,391 @@
+table 'Control Tower'
+	lineageTag: 46eb8e55-ebcf-415c-ba2b-e2708f1e3674
+
+	column store_id
+		dataType: int64
+		formatString: 0
+		lineageTag: f6c85993-7f1d-480e-9101-a795b9d3f7df
+		summarizeBy: none
+		sourceColumn: store_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_id
+		dataType: int64
+		formatString: 0
+		lineageTag: d4136b4b-39f9-476d-8a7f-b9be525b2bdf
+		summarizeBy: none
+		sourceColumn: product_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column decision_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c7bba54c-b137-45f5-8ef6-f50426855804
+		summarizeBy: none
+		sourceColumn: decision_date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column expected_daily_demand
+		dataType: double
+		formatString: #,0.00
+		lineageTag: fd4f0984-0fe7-41cf-8f07-f5b79fbd6400
+		summarizeBy: none
+		sourceColumn: expected_daily_demand
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column demand_std
+		dataType: double
+		lineageTag: ee733ccc-4776-4892-acef-00c3c53c237e
+		summarizeBy: sum
+		sourceColumn: demand_std
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column on_hand_quantity
+		dataType: double
+		formatString: #,0.00
+		lineageTag: b52bb960-c6cd-4794-a2a6-6923bfc771f7
+		summarizeBy: none
+		sourceColumn: on_hand_quantity
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column on_order_quantity
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 933c684d-2aef-4418-98bb-04ab34ce5112
+		summarizeBy: none
+		sourceColumn: on_order_quantity
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column backorder_quantity
+		dataType: double
+		formatString: #,0.00
+		lineageTag: c71297e6-eebf-479b-afcd-92a2cb8a04ed
+		summarizeBy: none
+		sourceColumn: backorder_quantity
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column inventory_position
+		dataType: double
+		formatString: #,0.00
+		lineageTag: da11db09-a165-40b1-af1a-7bda1069de2a
+		summarizeBy: none
+		sourceColumn: inventory_position
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column days_of_supply
+		dataType: double
+		formatString: #,0.00
+		lineageTag: e986058a-94c0-41c1-92da-1a4e5ff1ef9e
+		summarizeBy: none
+		sourceColumn: days_of_supply
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column average_lead_time_days
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 3a645bfc-d770-43e7-a7fe-42a716c19707
+		summarizeBy: none
+		sourceColumn: average_lead_time_days
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column coverage_gap_days
+		dataType: double
+		formatString: #,0.00
+		lineageTag: d3b4fbaf-a3d8-459e-9c12-4c250c1a496f
+		summarizeBy: none
+		sourceColumn: coverage_gap_days
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column safety_stock
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 2481140e-793d-4552-9777-d57969f98e50
+		summarizeBy: none
+		sourceColumn: safety_stock
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column reorder_point
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 0693d2c5-c843-4617-bb69-9f7dd3549d49
+		summarizeBy: none
+		sourceColumn: reorder_point
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column reorder_required
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 8664e7f4-f28c-4fd1-85cf-cf6cb1e30e00
+		summarizeBy: none
+		sourceColumn: reorder_required
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column raw_order_quantity
+		dataType: double
+		formatString: #,0.00
+		lineageTag: d3808f2e-3849-48ae-8142-b45a1ec9690d
+		summarizeBy: none
+		sourceColumn: raw_order_quantity
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column final_recommended_quantity
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 931f411f-c4a4-447a-b51b-a304b963c007
+		summarizeBy: none
+		sourceColumn: final_recommended_quantity
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column capital_constrained
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 3e3c96ea-5773-4d58-9981-517e6a292197
+		summarizeBy: none
+		sourceColumn: capital_constrained
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column capacity_constrained
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d4ef1be1-dd8f-47ca-badc-2b6f15955c4f
+		summarizeBy: none
+		sourceColumn: capacity_constrained
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column shelf_life_constrained
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 512da876-d713-4cc2-9e74-5db5abef58b2
+		summarizeBy: none
+		sourceColumn: shelf_life_constrained
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column urgency_score
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 7fcb9483-d466-4512-938b-56b5980da16a
+		summarizeBy: none
+		sourceColumn: urgency_score
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column urgency_band
+		dataType: string
+		lineageTag: ebea50f0-a499-45a3-be40-624da64ed7e1
+		summarizeBy: none
+		sourceColumn: urgency_band
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Synthetic scenario currency units.
+	column stockout_cost_per_unit
+		dataType: double
+		formatString: #,0.00
+		lineageTag: e73a2d90-cb03-4f3d-9fec-5bac4583bc23
+		summarizeBy: sum
+		sourceColumn: stockout_cost_per_unit
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column on_time_delivery_rate
+		dataType: double
+		lineageTag: a542c3dd-b3df-42a0-b6f8-26d1d72eff1f
+		summarizeBy: sum
+		sourceColumn: on_time_delivery_rate
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column priority_weight
+		dataType: double
+		lineageTag: 44e56f1f-f5f2-4069-81f5-4a64e6ac108f
+		summarizeBy: sum
+		sourceColumn: priority_weight
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column allocated_quantity
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 7fa0960d-7deb-4051-97f7-426a8ce633bd
+		summarizeBy: none
+		sourceColumn: allocated_quantity
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Synthetic scenario currency units.
+	column allocated_order_value
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 73c9ca64-a398-457e-993f-9c47dc05b22b
+		summarizeBy: none
+		sourceColumn: allocated_order_value
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column funding_status
+		dataType: string
+		lineageTag: 870c3b43-977d-4e42-bdce-41529d8f609c
+		summarizeBy: none
+		sourceColumn: funding_status
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column control_tower_status
+		dataType: string
+		lineageTag: 3bfdb1f3-9719-43f6-843f-9d92652a8112
+		summarizeBy: none
+		sourceColumn: control_tower_status
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column recommended_action
+		dataType: string
+		lineageTag: b5d4b688-e567-4df3-a206-cdc3ef33c02b
+		summarizeBy: none
+		sourceColumn: recommended_action
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Reorder Urgency' = IF('Control Tower'[reorder_required],COALESCE('Control Tower'[urgency_band],"UNCLASSIFIED"),"NOT REQUIRED")
+		dataType: string
+		lineageTag: bb0907d9-26c4-4ad3-88ea-7360ca301735
+		summarizeBy: none
+		sortByColumn: 'Reorder Urgency Sort'
+
+	column 'Reorder Urgency Sort' = IF(NOT('Control Tower'[reorder_required]),5,SWITCH('Control Tower'[urgency_band],"CRITICAL",1,"HIGH",2,"MEDIUM",3,"LOW",4,6))
+		dataType: int64
+		isHidden
+		lineageTag: 757a66ac-97e2-4c32-93bc-ba0386e368cf
+
+	partition 'Control Tower' = m
+		mode: import
+		source =
+				let
+				  Source = PostgreSQL.Database("localhost:5432", "supplyguard"),
+				  #"Navigation 1" = Source{[Schema = "mart", Item = "bi_control_tower"]}[Data]
+				in
+				  #"Navigation 1"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table

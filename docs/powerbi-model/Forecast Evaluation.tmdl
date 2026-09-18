@@ -1,0 +1,51 @@
+/// Saved observed-sales holdout predictions; separate from synthetic operations.
+table 'Forecast Evaluation'
+	lineageTag: be59e8de-6b45-4d54-acfd-043e18ce6a40
+
+	column store_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 256de7c8-57a7-449d-8bae-345a756c2afe
+		summarizeBy: none
+		sourceColumn: store_id
+
+	column product_id
+		dataType: int64
+		formatString: 0
+		lineageTag: d5599a1a-6df1-49b7-8a0f-069991bbdb0f
+		summarizeBy: none
+		sourceColumn: product_id
+
+	column dt
+		dataType: dateTime
+		formatString: dd MMM yyyy
+		lineageTag: 30907c59-d556-4164-be91-fd113ce5cfdf
+		summarizeBy: none
+		sourceColumn: dt
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column actual
+		dataType: double
+		formatString: 0.0000
+		lineageTag: e98b1ce7-f62a-4afc-847d-76737dd5052e
+		summarizeBy: none
+		sourceColumn: actual
+
+	column prediction
+		dataType: double
+		formatString: 0.0000
+		lineageTag: 034b1747-7cf2-41ef-b2f3-038fc06e7f8e
+		summarizeBy: none
+		sourceColumn: prediction
+
+	column rolling_prediction
+		dataType: double
+		formatString: 0.0000
+		lineageTag: eb0def2c-39aa-46a0-96f3-fecdb039ed57
+		summarizeBy: none
+		sourceColumn: rolling_prediction
+
+	partition 'Forecast Evaluation' = m
+		mode: import
+		source = let Source = PostgreSQL.Database("localhost:5432", "supplyguard"), View = Source{[Schema="mart", Item="bi_forecast_evaluation"]}[Data] in View

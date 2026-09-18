@@ -1,0 +1,58 @@
+relationship AutoDetected_c0922420-e2c3-438a-b292-a4c29c15596f
+	fromColumn: 'Control Tower'.store_id
+	toColumn: Store.store_id
+
+relationship AutoDetected_17aa7edc-cabc-403c-8338-fb7771cfc8ef
+	fromColumn: 'Control Tower'.product_id
+	toColumn: Product.product_id
+
+relationship 5305aefd-bef4-7d64-9871-cd6c96b4dd31
+	fromColumn: 'Control Tower'.decision_date
+	toColumn: Date.dt
+
+relationship AutoDetected_a6ad8b38-0f3c-4777-9c35-a46d67610238
+	fromColumn: 'Control Tower'.control_tower_status
+	toColumn: Status.control_tower_status
+
+relationship AutoDetected_a5f3039f-38fc-4b33-ad44-558472b8daa1
+	fromColumn: 'Control Tower'.urgency_band
+	toColumn: Urgency.urgency_band
+
+relationship AutoDetected_482802a8-fd9b-443c-aa30-1a8ad2ab137d
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: Urgency.Sort
+	toColumn: Status.Sort
+
+relationship acb17e6b-8bec-4ccc-89f4-2f40ff3c5483
+	fromColumn: 'Demand History'.store_id
+	toColumn: Store.store_id
+
+relationship a8429ae2-04f9-4ccd-bdc0-a13a0b09d5d6
+	fromColumn: 'Demand History'.product_id
+	toColumn: Product.product_id
+
+relationship ff52f149-bc3f-4ac3-b541-075a7ac37edf
+	fromColumn: 'Demand History'.dt
+	toColumn: Date.dt
+
+relationship 7a2afce1-4819-41de-855a-41a8e45b48a7
+	fromColumn: 'Forecast Evaluation'.store_id
+	toColumn: Store.store_id
+
+relationship a37a9590-a9d7-49e7-b8d7-7eedfc62c265
+	fromColumn: 'Forecast Evaluation'.product_id
+	toColumn: Product.product_id
+
+relationship 34873c91-f7b2-44f2-b1c2-aea477f1bca7
+	fromColumn: 'Forecast Evaluation'.dt
+	toColumn: Date.dt
+
+relationship Outlook_Store
+	fromColumn: 'Forecast Outlook'.store_id
+	toColumn: Store.store_id
+
+relationship Outlook_Product
+	fromColumn: 'Forecast Outlook'.product_id
+	toColumn: Product.product_id
